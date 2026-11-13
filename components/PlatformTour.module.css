@@ -10,6 +10,7 @@
 
 .segWrap { position: relative; display: flex; justify-content: center; margin-top: 32px; }
 .seg {
+  position: relative;
   display: inline-flex;
   gap: 4px;
   padding: 5px;
@@ -18,6 +19,8 @@
   background: rgba(255, 255, 255, .06);
 }
 .tab {
+  position: relative;
+  z-index: 1;
   padding: 10px 18px;
   border: 0;
   border-radius: var(--r-pill);
@@ -28,9 +31,20 @@
   font-weight: 600;
   cursor: pointer;
 }
-.tab { transition: background-color var(--t-hover) var(--ease-out), color var(--t-hover) var(--ease-out); }
+.tab { transition: background-color var(--t-hover) var(--ease-out), color 300ms var(--ease-out); }
 .tab:hover { background: rgba(255, 255, 255, .06); color: var(--white); }
-.tab[aria-selected="true"] { background: var(--white); color: var(--navy); }
+.tab[aria-selected="true"] { color: var(--navy); }
+.tab[aria-selected="true"], .ready .tab[aria-selected="true"]:hover { background: transparent; }
+.seg:not(.ready) .tab[aria-selected="true"] { background: var(--white); } /* until the pill has measured */
+.pill {
+  position: absolute;
+  border-radius: var(--r-pill);
+  background: var(--white);
+  transition: left 350ms var(--ease-carousel), top 350ms var(--ease-carousel), width 350ms var(--ease-carousel);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pill { transition: none; }
+}
 
 .stage {
   --card-w: 920px;

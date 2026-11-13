@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type CSSProperties } from "react";
+import { useLayoutEffect, useState, type CSSProperties } from "react";
 import { useAutoAdvance } from "./useAutoAdvance";
 import { useTabKeys } from "./useTabKeys";
 import s from "./PlatformTour.module.css";
@@ -35,6 +35,18 @@ export default function PlatformTour() {
   const [active, setActive] = useAutoAdvance(views.length, hover || focus);
   const keys = useTabKeys(views.length, active, setActive);
 
+  // The white pill slides to the active tab; re-measured whenever the tab row reflows (e.g. wraps on mobile).
+  const [pill, setPill] = useState<CSSProperties | null>(null);
+  useLayoutEffect(() => {
+    const tab = keys.tabs.current[active];
+    if (!tab?.parentElement) return;
+    const place = () => setPill({ left: tab.offsetLeft, top: tab.offsetTop, width: tab.offsetWidth, height: tab.offsetHeight });
+    place();
+    const ro = new ResizeObserver(place);
+    ro.observe(tab.parentElement);
+    return () => ro.disconnect();
+  }, [active, keys.tabs]);
+
   return (
     <section
       className={s.section}
@@ -46,7 +58,8 @@ export default function PlatformTour() {
       <h2 className={`h2 reveal ${s.rel}`}><span className={s.muted}>One platform,</span><br />from finding to fix.</h2>
 
       <div className={`${s.segWrap} reveal`}>
-        <div className={s.seg} role="tablist" aria-label="Platform views" onKeyDown={keys.onKeyDown}>
+        <div className={`${s.seg} ${pill ? s.ready : ""}`} role="tablist" aria-label="Platform views" onKeyDown={keys.onKeyDown}>
+          {pill && <span className={s.pill} style={pill} aria-hidden="true" />}
           {views.map((v, i) => (
             <button
               key={v.tab}

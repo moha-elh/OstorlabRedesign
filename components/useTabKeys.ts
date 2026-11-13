@@ -16,5 +16,5 @@ export function useTabKeys(count: number, active: number, select: (i: number) =>
   }
 
   const ref = (i: number) => (el: HTMLButtonElement | null) => { tabs.current[i] = el; };
-  return { onKeyDown, ref };
+  return { onKeyDown, ref, tabs };
 }
