@@ -1,8 +1,8 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 300px 48px 110px;
-  background: var(--join-integrations-faq);
+  padding: 560px 48px 110px; /* heading lands on the dark end of the sky */
+  background: var(--join-integrations-faq), var(--ink-hero);
   color: var(--white);
 }
 .dots {
@@ -95,7 +95,7 @@
 .still a { font-weight: 600; color: var(--cyan); }
 
 @media (max-width: 900px) {
-  .section { padding: 300px 16px 80px; }
+  .section { padding: 560px 16px 80px; }
   .grid { grid-template-columns: 1fr; gap: 10px; }
   .answer { padding: 0 20px 22px 60px; }
 }

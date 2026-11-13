@@ -78,7 +78,10 @@
   /* The reference's 0/8/18/28/38% stops, fixed in px at its 1453px height so the heading stays on dark at every width. */
   --join-ways-agentic: linear-gradient(180deg, #F4F6F8 0px, #CFDCE8 116px, #4E6F92 262px, #0B2D4C 407px, #03203D 552px, #03203D 100%);
   --join-tour-integrations: linear-gradient(180deg, #03203D 0px, #0B2D4C 60px, #5E7C9A 150px, #C9D6E2 230px, #F4F6F8 300px);
-  --join-integrations-faq: linear-gradient(180deg, #F4F6F8 0px, #C9D6E2 70px, #5E7C9A 150px, #0B2D4C 230px, #03203D 300px);
+  /* The hero -> free-scan sky played backwards (same colours, same 708px band, glow mirrored), ending on the hero black. */
+  --join-integrations-faq:
+    radial-gradient(55% 205px at 50% 345px, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
+    linear-gradient(180deg, #F4F6F8 0px, #F1F6FA 65px, #D6EAF8 131px, #8CC6F0 214px, #3A93E2 298px, #1663C0 364px, #0D3F86 438px, #0B2550 522px, #0A1426 615px, #0A0C10 708px);
 }
 
 /* Integrations */
