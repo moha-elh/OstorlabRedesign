@@ -31,6 +31,48 @@ const cases = [
   },
 ];
 
+/* Shortened from Gartner Peer Insights. Only the verbatim one carries quote marks. */
+const reviews = [
+  { quote: "Very efficient team and knowledgeable support engineers. The product keeps evolving and they take customer input seriously.", initials: "SA", role: "Senior AppSec Engineer", industry: "Banking" },
+  { quote: "“The UI is easy to use. It took us a small amount of work to integrate the platform with our CI/CD.”", initials: "OA", role: "Operations Associate", industry: "IT Services" },
+  { quote: "It made evaluating our internal mobile apps easy. Onboarding was smooth and the UI automation is great.", initials: "OA", role: "Operations Associate", industry: "IT Services" },
+  { quote: "Very professional and technical. Unlike other vendors, the team after the sale was excellent.", initials: "SA", role: "Security Architect", industry: "Media" },
+];
+
+function Reviews() {
+  // The list is rendered twice so the -50% drift loops seamlessly; the copy is hidden from assistive tech.
+  return (
+    <>
+      <div className={s.revHead}>
+        <h3>What security teams say</h3>
+        <span><span className={s.stars} aria-hidden="true">★★★★★</span><strong>4.8/5</strong> on Gartner Peer Insights</span>
+      </div>
+      <div className={s.revRow}>
+        <div className={s.marquee}>
+          {[0, 1].map((copy) =>
+            reviews.map((r) => (
+              <figure key={`${copy}-${r.quote}`} className={s.review} aria-hidden={copy === 1}>
+                <span className={s.stars} aria-hidden="true">★★★★★</span>
+                <blockquote>{r.quote}</blockquote>
+                <figcaption>
+                  <span className={s.avatar} aria-hidden="true">{r.initials}</span>
+                  <span className={s.who}>
+                    <strong>{r.role}</strong>
+                    <span>{r.industry} · Gartner Peer Insights</span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))
+          )}
+        </div>
+      </div>
+      <p className={s.fine}>
+        Reviews from Gartner Peer Insights, shortened. Gartner Peer Insights content reflects the opinions of individual end users and does not represent the views of Gartner or its affiliates.
+      </p>
+    </>
+  );
+}
+
 export default function ProofReviews() {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
@@ -86,6 +128,8 @@ export default function ProofReviews() {
       <div className={s.dots} aria-hidden="true">
         {cases.map((c, i) => <span key={c.company} className={i === active ? s.on : ""} />)}
       </div>
+
+      <Reviews />
     </section>
   );
 }
