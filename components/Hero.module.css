@@ -105,6 +105,8 @@
   letter-spacing: var(--ls-h3);
 }
 .stats span { font-size: var(--fs-small); color: var(--text-hero-2); }
+/* The stats sit on the dotted globe; a dark halo keeps them clear of the dots. */
+.stats strong, .stats span { text-shadow: 0 1px 2px rgba(10, 12, 16, .9), 0 0 14px rgba(10, 12, 16, .9); }
 
 @media (max-width: 900px) {
   .navLeft, .hideSm { display: none; }

@@ -78,7 +78,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(3, 32, 61, .15) 0%, rgba(3, 32, 61, .35) 45%, rgba(3, 32, 61, .95) 100%);
+  background: linear-gradient(180deg, rgba(3, 32, 61, .1) 0%, rgba(3, 32, 61, .35) 40%, rgba(3, 32, 61, .92) 70%, rgba(3, 32, 61, .98) 100%); /* dark under the caption, whatever the cover */
 }
 .cap {
   position: absolute;
@@ -175,6 +175,7 @@
   max-width: none;
   height: auto;
   transform: translateY(-50%);
+  opacity: .7;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(180deg, transparent 22%, #000 38%, #000 62%, transparent 78%);
   mask-image: linear-gradient(180deg, transparent 22%, #000 38%, #000 62%, transparent 78%);
@@ -220,7 +221,7 @@
 }
 .who { display: flex; flex-direction: column; }
 .who strong { font-size: var(--fs-label); font-weight: 600; }
-.who span { font-size: var(--fs-small); color: var(--text-dark-3); }
+.who span { font-size: var(--fs-small); color: var(--text-dark-2); }
 
 .fine {
   position: relative;
