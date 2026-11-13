@@ -1,0 +1,91 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 300px 48px 110px;
+  background: var(--join-tour-integrations);
+  color: var(--navy);
+}
+.head { position: relative; text-align: center; }
+.muted { color: var(--head-light-muted); }
+.head p {
+  max-width: 540px;
+  margin: 18px auto 0;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-light-2);
+}
+
+.rows {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 56px -48px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: drift 46s linear infinite;
+}
+.reverse { animation-direction: reverse; }
+.row:hover .marquee { animation-play-state: paused; }
+@keyframes drift { to { transform: translateX(-50%); } }
+
+.tile {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: content-box;
+  height: 84px;
+  padding: 0 30px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-item);
+  background: var(--white);
+  transition: border-color var(--t-hover) var(--ease-out), box-shadow var(--t-hover) var(--ease-out);
+}
+.tile img {
+  width: auto;
+  height: auto;
+  max-width: 140px;
+  max-height: 30px;
+  filter: grayscale(1) contrast(.9);
+  opacity: .5;
+  transition: filter var(--t-hover) var(--ease-out), opacity var(--t-hover) var(--ease-out);
+}
+.tile img.iconLogo { max-height: 26px; }
+.tile span {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--tile-name);
+  transition: color var(--t-hover) var(--ease-out);
+}
+.tile:hover { border-color: var(--tile-line-hover); box-shadow: 0 10px 24px rgba(3, 32, 61, .08); }
+.tile:hover img { filter: none; opacity: 1; }
+.tile:hover span { color: var(--navy); }
+
+.more { margin-top: 40px; text-align: center; }
+.more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-card);
+  font-weight: 600;
+  color: var(--blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+}
+@media (max-width: 900px) {
+  .section { padding: 300px 16px 80px; }
+  .rows { margin: 40px -16px 0; }
+}

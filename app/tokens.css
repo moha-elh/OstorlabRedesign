@@ -76,6 +76,13 @@
     radial-gradient(55% 22% at 50% 63%, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
     linear-gradient(180deg, #0A0C10 0%, #0A0C10 24%, #0A1426 34%, #0B2550 44%, #0D3F86 53%, #1663C0 61%, #3A93E2 68%, #8CC6F0 77%, #D6EAF8 86%, #F1F6FA 93%, #F4F6F8 100%);
   --join-ways-agentic: linear-gradient(180deg, #F4F6F8 0%, #CFDCE8 8%, #4E6F92 18%, #0B2D4C 28%, #03203D 38%, #03203D 100%);
+  --join-tour-integrations: linear-gradient(180deg, #03203D 0px, #0B2D4C 60px, #5E7C9A 150px, #C9D6E2 230px, #F4F6F8 300px);
+}
+
+/* Integrations */
+:root {
+  --tile-name: #9AA7B4;
+  --tile-line-hover: #C9D6E2;
 }
 
 /* Free scan */
