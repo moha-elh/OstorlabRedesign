@@ -123,6 +123,19 @@
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: none; }
 }
+/* Copy rises in line by line on load, then the stats. `translate` keeps it independent of hover transforms. */
+.body > *, .stats {
+  animation: enter 900ms cubic-bezier(.2, .7, .2, 1) both;
+}
+.body > :nth-child(2) { animation-delay: 80ms; }
+.body > :nth-child(3) { animation-delay: 160ms; }
+.body > :nth-child(4) { animation-delay: 240ms; }
+.stats { animation-delay: 420ms; }
+@keyframes enter {
+  from { opacity: 0; translate: 0 16px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .horizon { animation: none; }
+  .horizon, .body > *, .stats { animation: none; }
 }
