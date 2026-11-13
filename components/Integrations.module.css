@@ -1,7 +1,7 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 300px 48px 120px; /* content on paper, below the 280px sky */
+  padding: 330px 48px 64px; /* content on paper, below the 320px ramp */
   background: var(--join-tour-integrations);
   color: var(--navy);
 }
@@ -85,6 +85,6 @@
   .marquee { animation: none; }
 }
 @media (max-width: 900px) {
-  .section { padding: 300px 16px 100px; }
+  .section { padding: 330px 16px 56px; }
   .rows { margin: 40px -16px 0; }
 }

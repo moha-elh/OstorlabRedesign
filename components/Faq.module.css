@@ -1,7 +1,7 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 360px 48px 110px; /* heading on the blue band of the sky, like "Scan your app for free" */
+  padding: 210px 48px 110px; /* heading on the blue band of the sky, like "Scan your app for free" */
   background: var(--join-integrations-faq), var(--ink-hero);
   color: var(--white);
 }
@@ -85,7 +85,7 @@
 .still a { font-weight: 600; color: var(--cyan); }
 
 @media (max-width: 900px) {
-  .section { padding: 360px 16px 80px; }
+  .section { padding: 210px 16px 80px; }
   .grid { grid-template-columns: 1fr; gap: 10px; }
   .answer { padding: 0 20px 22px 60px; }
 }

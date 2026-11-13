@@ -76,18 +76,14 @@
   --join-hero-scan:
     radial-gradient(55% 22% at 50% 63%, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
     linear-gradient(180deg, #0A0C10 0%, #0A0C10 24%, #0A1426 34%, #0B2550 44%, #0D3F86 53%, #1663C0 61%, #3A93E2 68%, #8CC6F0 77%, #D6EAF8 86%, #F1F6FA 93%, #F4F6F8 100%);
-  /* The same sky compressed to 300px, paper -> navy, so the sections stay close. Heading sits just past it, on navy. */
-  --join-ways-agentic:
-    radial-gradient(55% 100px at 50% 150px, rgba(90, 175, 255, .5), rgba(90, 175, 255, 0) 70%),
-    linear-gradient(180deg, #F4F6F8 0px, #F1F6FA 28px, #D6EAF8 56px, #8CC6F0 92px, #3A93E2 128px, #1663C0 160px, #0D3F86 195px, #0B2550 235px, #03203D 280px, #03203D 100%);
-  /* And the same 300px sky back up after the tour: navy -> paper. Integrations content sits on paper below it. */
-  --join-tour-integrations:
-    radial-gradient(55% 100px at 50% 150px, rgba(90, 175, 255, .5), rgba(90, 175, 255, 0) 70%),
-    linear-gradient(180deg, #03203D 0px, #0B2550 45px, #0D3F86 85px, #1663C0 120px, #3A93E2 152px, #8CC6F0 188px, #D6EAF8 224px, #F1F6FA 252px, #F4F6F8 280px);
-  /* The hero -> free-scan sky played backwards (same colours, same 708px band, glow mirrored), ending on the hero black. */
+  /* Paper -> navy through muted steel blues (no bright sky blue), in even 40px steps over 320px. */
+  --join-ways-agentic: linear-gradient(180deg, #F4F6F8 0px, #E4EBF2 40px, #C9D6E3 80px, #A3B7CB 120px, #7891AD 160px, #4F6D8E 200px, #2E4D70 240px, #163656 280px, #03203D 320px, #03203D 100%);
+  /* The same ramp back up after the tour. */
+  --join-tour-integrations: linear-gradient(180deg, #03203D 0px, #163656 40px, #2E4D70 80px, #4F6D8E 120px, #7891AD 160px, #A3B7CB 200px, #C9D6E3 240px, #E4EBF2 280px, #F4F6F8 320px);
+  /* The hero -> free-scan sky played backwards (same colours and glow), compressed to 430px so the FAQ follows closely. */
   --join-integrations-faq:
-    radial-gradient(55% 205px at 50% 345px, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
-    linear-gradient(180deg, #F4F6F8 0px, #F1F6FA 65px, #D6EAF8 131px, #8CC6F0 214px, #3A93E2 298px, #1663C0 364px, #0D3F86 438px, #0B2550 522px, #0A1426 615px, #0A0C10 708px);
+    radial-gradient(55% 130px at 50% 205px, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
+    linear-gradient(180deg, #F4F6F8 0px, #F1F6FA 35px, #D6EAF8 75px, #8CC6F0 125px, #3A93E2 175px, #1663C0 215px, #0D3F86 260px, #0B2550 310px, #0A1426 370px, #0A0C10 430px);
 }
 
 /* Muted first line of a heading that sits on the blue band of a sky join. */
