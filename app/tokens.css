@@ -1,0 +1,71 @@
+:root {
+  /* Colour */
+  --navy: #03203D;
+  --navy-2: #0B2D4C;
+  --blue: #0081BA;
+  --cyan: #67C9EE;
+  --paper: #F4F6F8;
+  --ink-hero: #0A0C10;
+  --white: #FFFFFF;
+  --star: #FBBF24;
+
+  --text-dark-2: #B8CADB;
+  --text-dark-3: #7F98B3;
+  --text-hero-2: #A9B4C0;
+  --text-hero-3: #7D8A97;
+  --text-light-2: #4D6578;
+  --text-light-3: #7D8A97;
+  --head-light-muted: #9FB0C0;
+
+  --line-light: #E6EBF0;
+  --line-light-2: #E3E9EF;
+  --line-light-3: #EDF1F5;
+  --line-light-4: #DCE3EA;
+  --line-dark: rgba(255, 255, 255, .12);
+  --line-dark-10: rgba(255, 255, 255, .10);
+  --line-dark-14: rgba(255, 255, 255, .14);
+  --line-dark-16: rgba(255, 255, 255, .16);
+
+  /* Type */
+  --font: var(--font-jakarta), system-ui, sans-serif;
+  --fs-hero: 64px;     --lh-hero: 68px;
+  --fs-display: 80px;  --lh-display: 84px;
+  --fs-h2: 52px;       --lh-h2: 58px;
+  --fs-h3: 26px;       --lh-h3: 32px;
+  --fs-title: 22px;    --lh-title: 30px;
+  --fs-big: 42px;      --lh-big: 46px;
+  --fs-stat: 32px;     --lh-stat: 36px;
+  --fs-quote: 19px;    --lh-quote: 29px;
+  --fs-body: 16px;     --lh-body: 26px;
+  --fs-card: 15px;     --lh-card: 24px;
+  --fs-label: 14px;
+  --fs-small: 13px;
+  --fs-fine: 12px;     --lh-fine: 18px;
+  --ls-hero: -.04em;
+  --ls-display: -.05em;
+  --ls-h3: -.03em;
+
+  /* Radius */
+  --r-proof: 28px;
+  --r-card: 24px;
+  --r-screen: 20px;
+  --r-item: 18px;
+  --r-tile: 16px;
+  --r-btn: 10px;
+  --r-pill: 999px;
+
+  /* Motion */
+  --ease-out: ease-out;
+  --ease-carousel: cubic-bezier(.2, .7, .2, 1);
+  --t-hover: 200ms;
+  --t-toggle: 250ms;
+  --t-move: 600ms;
+  --t-auto: 6s;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --fs-hero: 38px; --lh-hero: 44px;
+    --fs-h2: 34px;   --lh-h2: 40px;
+  }
+}
