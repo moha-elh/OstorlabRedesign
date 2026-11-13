@@ -6,28 +6,31 @@ import Arrow from "./Arrow";
 import { useAutoAdvance } from "./useAutoAdvance";
 import s from "./ProofReviews.module.css";
 
-/* Picture panels are placeholders until the new case-study images land; keep the <img> slot. */
+/* Customer stories from ostorlab.co/partners (copy, metrics and images from the live case studies). */
 const cases = [
   {
-    company: "Qatar Media Corporation",
-    number: "4 months → 1 week",
-    title: "From a four-month fix cycle to one week",
-    text: "QMC added agentic security testing to its apps and cut the time from finding to fix from four months to one week.",
-    img: { src: "/assets/product/screen-remediation.webp", w: 1600, h: 752 },
-  },
-  {
     company: "Bumble Inc.",
-    number: "159 / 160",
-    title: "99% of releases scanned before launch",
-    text: "Bumble scans its iOS and Android store releases with Ostorlab before they go live: 159 of 160.",
-    img: { src: "/assets/product/screen-release-monitor.webp", w: 870, h: 808 },
+    number: "99%",
+    title: "Continuous Mobile Security Testing at Release Velocity with Ostorlab",
+    text: "99% of Bumble’s iOS and Android store releases scanned before going live (159 of 160).",
+    href: "https://www.ostorlab.co/case-studies/bumble",
+    img: { src: "/assets/case-studies/bumble.png", w: 1280, h: 720, position: "50% 50%" },
   },
   {
     company: "RSA Security",
     number: "Every release",
-    title: "Part of the formal security sign-off",
-    text: "RSA runs Ostorlab static and dynamic testing on every iOS and Android release before it ships.",
-    img: { src: "/assets/product/screen-evidence.webp", w: 1600, h: 751 },
+    title: "Embedding Security into the Mobile Development Lifecycle with Ostorlab",
+    text: "RSA Security runs Ostorlab SAST and DAST on each iOS and Android release as part of its formal security sign-off.",
+    href: "https://www.ostorlab.co/case-studies/rsa-security",
+    img: { src: "/assets/case-studies/rsa.png", w: 1744, h: 638, position: "80% 50%" },
+  },
+  {
+    company: "Qatar Media Corporation",
+    number: "4 months → 1 week",
+    title: "How QMC Cut Remediation Time from 4 Months to 1 Week with Agentic Security Testing",
+    text: "QMC brought the average remediation cycle down from four months to one week, about 17× faster.",
+    href: "https://www.ostorlab.co/case-studies/qmc",
+    img: { src: "/assets/case-studies/qmc.png", w: 2558, h: 1274, position: "0% 0%" },
   },
 ];
 
@@ -107,7 +110,7 @@ export default function ProofReviews() {
               inert={i !== active}
             >
               <div className={s.pic}>
-                <Image src={c.img.src} alt="" width={c.img.w} height={c.img.h} sizes="400px" />
+                <Image src={c.img.src} alt="" width={c.img.w} height={c.img.h} sizes="400px" style={{ objectPosition: c.img.position }} />
                 <div className={s.cap}>
                   <span>{c.company}</span>
                   <strong>{c.number}</strong>
@@ -116,7 +119,7 @@ export default function ProofReviews() {
               <div className={s.copy}>
                 <h3>{c.title}</h3>
                 <p>{c.text}</p>
-                <a href="#">Read the case study <Arrow /></a>
+                <a href={c.href}>Read the case study <Arrow /></a>
               </div>
             </article>
           ))}
