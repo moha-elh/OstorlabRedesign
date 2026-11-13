@@ -76,8 +76,8 @@
   --join-hero-scan:
     radial-gradient(55% 22% at 50% 63%, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
     linear-gradient(180deg, #0A0C10 0%, #0A0C10 24%, #0A1426 34%, #0B2550 44%, #0D3F86 53%, #1663C0 61%, #3A93E2 68%, #8CC6F0 77%, #D6EAF8 86%, #F1F6FA 93%, #F4F6F8 100%);
-  /* The reference's 0/8/18/28/38% stops, fixed in px at its 1453px height so the heading stays on dark at every width. */
-  --join-ways-agentic: linear-gradient(180deg, #F4F6F8 0px, #CFDCE8 116px, #4E6F92 262px, #0B2D4C 407px, #03203D 552px, #03203D 100%);
+  /* Paper to navy in 230px, so "How agentic testing works." (at 200px) always sits on dark. */
+  --join-ways-agentic: linear-gradient(180deg, #F4F6F8 0px, #CFDCE8 50px, #4E6F92 110px, #0B2D4C 170px, #03203D 230px, #03203D 100%);
   --join-tour-integrations: linear-gradient(180deg, #03203D 0px, #0B2D4C 60px, #5E7C9A 150px, #C9D6E2 230px, #F4F6F8 300px);
   /* The hero -> free-scan sky played backwards (same colours, same 708px band, glow mirrored), ending on the hero black. */
   --join-integrations-faq:
