@@ -1,7 +1,7 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 300px 48px 100px; /* heading at the end of the 320px ramp, on navy */
+  padding: 210px 48px 100px; /* heading just below the 180px ramp, on navy */
   background: var(--join-ways-agentic);
   color: var(--white);
 }
@@ -59,7 +59,7 @@
   .orb { animation: none; }
 }
 @media (max-width: 900px) {
-  .section { padding: 300px 16px 80px; }
+  .section { padding: 210px 16px 80px; }
   .grid { grid-template-columns: 1fr; }
   .cell:nth-child(n) { grid-column: auto; border-right: 0; }
   .text { padding: 0 8px 32px; }

@@ -1,7 +1,7 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 40px 48px 120px;
+  padding: 40px 48px 40px; /* the ramp to white starts right under the description */
   background: var(--navy);
   color: var(--white);
 }
@@ -81,7 +81,7 @@
 }
 
 @media (max-width: 900px) {
-  .section { padding: 40px 16px 80px; }
+  .section { padding: 40px 16px 40px; }
   .seg { flex-wrap: wrap; justify-content: center; border-radius: var(--r-item); }
   .stage { --card-w: 86vw; --gap: 16px; margin: 32px -16px 0; }
 }
