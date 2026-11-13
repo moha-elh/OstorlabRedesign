@@ -25,7 +25,11 @@ export default function Faq() {
         <button type="button" aria-expanded={open[i]} aria-controls={`faq-${i}`} onClick={() => toggle(i)}>
           <span className={s.n} aria-hidden="true">{i + 1}</span>
           {q}
-          <span className={s.toggle} aria-hidden="true">+</span>
+          <span className={s.toggle} aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M7 1v12M1 7h12" />
+            </svg>
+          </span>
         </button>
         <div id={`faq-${i}`} className={s.answer} hidden={!open[i]}>{a}</div>
       </div>

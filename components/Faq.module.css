@@ -74,10 +74,9 @@
   border-radius: var(--r-pill);
   background: var(--white);
   color: var(--navy);
-  font-size: 20px;
-  font-weight: 400;
-  transition: transform var(--t-toggle) var(--ease-out);
+  transition: transform var(--t-toggle) var(--ease-out), background-color var(--t-toggle) var(--ease-out);
 }
+.toggle svg { display: block; }
 .item.on .toggle { transform: rotate(45deg); background: var(--blue); color: var(--white); }
 .answer {
   padding: 0 70px 22px 60px;
