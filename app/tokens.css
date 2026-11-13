@@ -76,10 +76,12 @@
   --join-hero-scan:
     radial-gradient(55% 22% at 50% 63%, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
     linear-gradient(180deg, #0A0C10 0%, #0A0C10 24%, #0A1426 34%, #0B2550 44%, #0D3F86 53%, #1663C0 61%, #3A93E2 68%, #8CC6F0 77%, #D6EAF8 86%, #F1F6FA 93%, #F4F6F8 100%);
-  /* Paper -> navy through muted steel blues over 180px; the next heading starts just below. */
-  --join-ways-agentic: linear-gradient(180deg, #F4F6F8 0px, #E4EBF2 22px, #C9D6E3 45px, #A3B7CB 67px, #7891AD 90px, #4F6D8E 112px, #2E4D70 135px, #163656 157px, #03203D 180px, #03203D 100%);
-  /* The same 180px ramp back up after the tour. */
-  --join-tour-integrations: linear-gradient(180deg, #03203D 0px, #163656 22px, #2E4D70 45px, #4F6D8E 67px, #7891AD 90px, #A3B7CB 112px, #C9D6E3 135px, #E4EBF2 157px, #F4F6F8 180px);
+  /*
+   * Paper <-> navy over 200px, interpolated in OKLab with smootherstep easing: even perceived steps and
+   * zero slope at both ends, so neither the white nor the navy side shows an edge where the fade stops.
+   */
+  --join-ways-agentic: linear-gradient(180deg, #F4F6F8 0px, #F3F5F7 17px, #EAEEF1 33px, #D8DDE3 50px, #BCC5CE 67px, #99A6B4 83px, #738497 100px, #4F647A 117px, #314862 133px, #1A334F 150px, #0A2743 167px, #04213E 183px, #03203D 200px, #03203D 100%);
+  --join-tour-integrations: linear-gradient(180deg, #03203D 0px, #04213E 17px, #0A2743 33px, #1A334F 50px, #314862 67px, #4F647A 83px, #738497 100px, #99A6B4 117px, #BCC5CE 133px, #D8DDE3 150px, #EAEEF1 167px, #F3F5F7 183px, #F4F6F8 200px);
   /* The hero -> free-scan sky played backwards (same colours and glow), compressed to 430px so the FAQ follows closely. */
   --join-integrations-faq:
     radial-gradient(55% 130px at 50% 205px, rgba(90, 175, 255, .55), rgba(90, 175, 255, 0) 70%),
