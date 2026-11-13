@@ -106,26 +106,25 @@
   color: var(--cyan);
 }
 
+.controls { position: relative; display: flex; align-items: center; justify-content: center; gap: 20px; }
 .nav {
-  position: absolute;
-  top: 210px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, .3);
   border-radius: var(--r-pill);
   background: rgba(255, 255, 255, .08);
   color: var(--white);
-  font: inherit;
-  font-size: 20px;
   cursor: pointer;
+  transition: background-color var(--t-hover) var(--ease-out);
 }
-.prev { left: calc(50% - var(--card-w) / 2 - 46px); }
-.next { right: calc(50% - var(--card-w) / 2 - 46px); }
+.nav:hover { background: rgba(255, 255, 255, .16); }
+.nav svg { display: block; }
 
-.dots { position: relative; display: flex; justify-content: center; gap: 8px; }
+.dots { display: flex; gap: 8px; }
 .dots span {
   width: 8px;
   height: 8px;
@@ -227,7 +226,4 @@
   .copy { padding: 28px 24px; }
   .cap { left: 24px; right: 24px; bottom: 20px; }
   .cap strong { font-size: var(--fs-stat); line-height: var(--lh-stat); }
-  .nav { top: 28px; width: 40px; height: 40px; }
-  .prev { left: 4px; }
-  .next { right: 4px; }
 }

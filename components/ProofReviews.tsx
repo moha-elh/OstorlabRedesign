@@ -76,6 +76,14 @@ function Reviews() {
   );
 }
 
+function Chevron({ dir }: { dir: "left" | "right" }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d={dir === "left" ? "M12 4l-6 6 6 6" : "M8 4l6 6-6 6"} />
+    </svg>
+  );
+}
+
 export default function ProofReviews() {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
@@ -90,7 +98,7 @@ export default function ProofReviews() {
       <h2 className={`h2 ${s.rel}`}><span className={s.muted}>Proof from the teams</span><br />who use Ostorlab.</h2>
 
       <div
-        className={s.carousel}
+        className={s.rel}
         role="region"
         aria-roledescription="carousel"
         aria-label="Case studies"
@@ -99,6 +107,7 @@ export default function ProofReviews() {
         onFocus={() => setFocus(true)}
         onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setFocus(false); }}
       >
+      <div className={s.carousel}>
         <div className={s.track} style={{ "--i": active } as CSSProperties} aria-live={hover || focus ? "polite" : "off"}>
           {cases.map((c, i) => (
             <article
@@ -124,12 +133,15 @@ export default function ProofReviews() {
             </article>
           ))}
         </div>
-        <button type="button" className={`${s.nav} ${s.prev}`} aria-label="Previous case study" onClick={() => go(-1)}>‹</button>
-        <button type="button" className={`${s.nav} ${s.next}`} aria-label="Next case study" onClick={() => go(1)}>›</button>
       </div>
 
-      <div className={s.dots} aria-hidden="true">
-        {cases.map((c, i) => <span key={c.company} className={i === active ? s.on : ""} />)}
+      <div className={s.controls}>
+        <button type="button" className={s.nav} aria-label="Previous case study" onClick={() => go(-1)}><Chevron dir="left" /></button>
+        <div className={s.dots} aria-hidden="true">
+          {cases.map((c, i) => <span key={c.company} className={i === active ? s.on : ""} />)}
+        </div>
+        <button type="button" className={s.nav} aria-label="Next case study" onClick={() => go(1)}><Chevron dir="right" /></button>
+      </div>
       </div>
 
       <Reviews />
