@@ -43,7 +43,7 @@ export default function Integrations() {
               {COPIES.map((copy) =>
                 row.map((t) => (
                   <li key={`${copy}-${t.file}`} className={s.tile} aria-hidden={copy > 0}>
-                    <Image src={`/assets/integrations/${t.file}`} alt="" width={28} height={28} />
+                    <Image src={`/assets/integrations/${t.file}`} alt="" width={32} height={28} />
                     <span>{t.name}</span>
                   </li>
                 ))
