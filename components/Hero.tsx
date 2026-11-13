@@ -41,8 +41,8 @@ export default function Hero() {
           Continuous scanning on every release, and AI agents that log in, get past pinning and prove each finding with a working exploit.
         </p>
         <div className={s.ctas}>
-          <a className={`${s.btn} ${s.btnLight}`} href="#scan">Scan your app free</a>
-          <a className={s.btn} href="#">Book a demo</a>
+          <a className="btn btn-light" href="#scan">Scan your app free</a>
+          <a className="btn" href="#">Book a demo</a>
         </div>
       </div>
 

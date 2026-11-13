@@ -16,8 +16,8 @@ export default function CtaFooter() {
         <h2 className={s.title}>See what it finds<br /><span className={s.muted}>in your app.</span></h2>
         <p className={s.lead}>Book a demo with the team, or start with a free scan of an app from the App Store or Google Play.</p>
         <div className={s.ctas}>
-          <a className={`${s.btn} ${s.btnLight}`} href="#scan">Scan your app free</a>
-          <a className={s.btn} href="#">Book a demo</a>
+          <a className="btn btn-light" href="#scan">Scan your app free</a>
+          <a className="btn" href="#">Book a demo</a>
         </div>
       </section>
 

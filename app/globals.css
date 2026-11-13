@@ -17,3 +17,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-
 /* A heading placed on the blue band of a sky join (same shadow as "Scan your app for free"). */
 .h2-sky { color: var(--white); text-shadow: 0 2px 40px rgba(0, 30, 80, .35); }
 .h2-sky > span { color: var(--head-sky-muted); }
+
+/* Buttons on dark sections (hero, CTA). Sections set padding through --btn-pad. */
+.btn {
+  padding: var(--btn-pad, 12px 22px);
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: var(--r-btn);
+  color: var(--white);
+  font-size: var(--fs-card);
+  font-weight: 600;
+  transition: opacity 160ms var(--ease-out), border-color 160ms var(--ease-out);
+}
+.btn:hover { opacity: .9; }
+.btn-light { border: 0; padding: var(--btn-pad-light, 13px 22px); background: var(--white); color: var(--ink-hero); }
