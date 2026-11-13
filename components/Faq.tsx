@@ -43,6 +43,7 @@ export default function Faq() {
   return (
     <section className={s.section}>
       <h2 className={`h2 h2-sky reveal ${s.rel}`}>FAQ</h2>
+      <p className={`${s.expand} reveal`}>Frequently asked questions</p>
 
       <div className={s.grid}>
         <div className={`${s.col} reveal`}>{[0, 1, 2, 3].map(item)}</div>
