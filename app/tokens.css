@@ -84,3 +84,9 @@
   --blue-light: #1A9BD6;
   --blue-deep: #005E8A;
 }
+
+/* Two ways */
+:root {
+  --illo-bg: #F2F5F8;
+  --build-tile-end: #E3ECF5;
+}
