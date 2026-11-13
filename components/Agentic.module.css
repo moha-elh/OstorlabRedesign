@@ -1,10 +1,11 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 370px 48px 100px; /* heading on the blue band of the sky */
+  padding: 270px 48px 100px; /* heading just past the 280px sky, on navy */
   background: var(--join-ways-agentic);
   color: var(--white);
 }
+.muted { color: var(--text-dark-3); }
 .sub {
   max-width: 520px;
   margin: 18px auto 0;
@@ -58,7 +59,7 @@
   .orb { animation: none; }
 }
 @media (max-width: 900px) {
-  .section { padding: 370px 16px 80px; }
+  .section { padding: 270px 16px 80px; }
   .grid { grid-template-columns: 1fr; }
   .cell:nth-child(n) { grid-column: auto; border-right: 0; }
   .text { padding: 0 8px 32px; }

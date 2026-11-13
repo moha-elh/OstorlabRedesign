@@ -35,7 +35,7 @@ const steps = [
 export default function Agentic() {
   return (
     <section className={s.section}>
-      <h2 className="h2 h2-sky"><span>How agentic testing works.</span><br />It starts where scanners stop.</h2>
+      <h2 className="h2"><span className={s.muted}>How agentic testing works.</span><br />It starts where scanners stop.</h2>
       <p className={s.sub}>AI agents test your app the way an attacker would, on the apps and releases where depth matters.</p>
 
       <ol className={s.grid}>
