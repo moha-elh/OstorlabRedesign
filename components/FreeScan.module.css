@@ -157,7 +157,7 @@
   line-height: 22px;
   color: var(--navy);
 }
-.deep a { font-weight: 600; color: var(--blue-text); }
+.deep a { font-weight: 600; color: var(--blue-deep); } /* deeper: this line sits on the light-blue end of the sky */
 
 @media (max-width: 900px) {
   .mail { margin-left: 0; }
