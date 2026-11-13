@@ -5,6 +5,7 @@ import Agentic from "@/components/Agentic";
 import ProofReviews from "@/components/ProofReviews";
 import PlatformTour from "@/components/PlatformTour";
 import Integrations from "@/components/Integrations";
+import Faq from "@/components/Faq";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ProofReviews />
       <PlatformTour />
       <Integrations />
+      <Faq />
     </main>
   );
 }

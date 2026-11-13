@@ -1,0 +1,102 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 300px 48px 110px;
+  background: var(--join-integrations-faq);
+  color: var(--white);
+}
+.dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(103, 201, 238, .18) 1.2px, transparent 1.6px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(60% 55% at 50% 60%, #000, transparent);
+  mask-image: radial-gradient(60% 55% at 50% 60%, #000, transparent);
+  pointer-events: none;
+}
+.rel { position: relative; }
+.muted { color: var(--text-dark-3); }
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+  max-width: 1180px;
+  margin: 48px auto 0;
+}
+.col { display: flex; flex-direction: column; gap: 10px; }
+
+.item {
+  border-radius: var(--r-item);
+  background: rgba(255, 255, 255, .05);
+  box-shadow: inset 0 0 0 1px var(--line-dark-10);
+  transition: all var(--t-toggle) var(--ease-out);
+}
+.item.on { background: rgba(255, 255, 255, .09); box-shadow: inset 0 0 0 1px rgba(103, 201, 238, .6); }
+.item button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 20px;
+  border: 0;
+  background: none;
+  color: var(--white);
+  font: inherit;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.n {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .08);
+  font-size: var(--fs-fine);
+  font-weight: 600;
+  color: var(--text-dark-2);
+}
+.toggle {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border-radius: var(--r-pill);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 20px;
+  font-weight: 400;
+  transition: transform var(--t-toggle) var(--ease-out);
+}
+.item.on .toggle { transform: rotate(45deg); background: var(--blue); color: var(--white); }
+.answer {
+  padding: 0 70px 22px 60px;
+  font-size: var(--fs-card);
+  line-height: var(--lh-card);
+  color: var(--text-dark-2);
+}
+
+.still {
+  position: relative;
+  margin-top: 40px;
+  font-size: var(--fs-card);
+  color: var(--text-dark-2);
+  text-align: center;
+}
+.still a { font-weight: 600; color: var(--cyan); }
+
+@media (max-width: 900px) {
+  .section { padding: 300px 16px 80px; }
+  .grid { grid-template-columns: 1fr; gap: 10px; }
+  .answer { padding: 0 20px 22px 60px; }
+}
