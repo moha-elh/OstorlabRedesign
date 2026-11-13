@@ -227,7 +227,9 @@
   .card { flex-direction: column; }
   .pic { flex-basis: 220px; min-height: 220px; border-right: 0; border-bottom: 1px solid var(--line-dark); }
   .copy { padding: 28px 24px; }
-  .nav { top: 96px; }
+  .cap { left: 24px; right: 24px; bottom: 20px; }
+  .cap strong { font-size: var(--fs-stat); line-height: var(--lh-stat); }
+  .nav { top: 28px; width: 40px; height: 40px; }
   .prev { left: 4px; }
   .next { right: 4px; }
 }
