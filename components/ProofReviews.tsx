@@ -7,8 +7,7 @@ import { useAutoAdvance } from "./useAutoAdvance";
 import s from "./ProofReviews.module.css";
 
 /*
- * Customer stories from ostorlab.co/partners. Bumble and RSA covers are the site's own (/v2/case-studies/*-cover.png).
- * QMC has no cover on the site; qmc.png is composed in the same style from QMC's logo and its case-study screenshot.
+ * Customer stories from ostorlab.co/partners, with the provided Ostorlab × partner cover images.
  */
 const cases = [
   {
@@ -17,7 +16,7 @@ const cases = [
     title: "Continuous Mobile Security Testing at Release Velocity with Ostorlab",
     text: "99% of Bumble’s iOS and Android store releases scanned before going live (159 of 160).",
     href: "https://www.ostorlab.co/case-studies/bumble",
-    img: { src: "/assets/case-studies/bumble.png", w: 1280, h: 720, position: "50% 50%" },
+    img: { src: "/assets/case-studies/bumble-cover.png", w: 1280, h: 720, position: "50% 50%" },
   },
   {
     company: "RSA Security",
@@ -25,7 +24,7 @@ const cases = [
     title: "Embedding Security into the Mobile Development Lifecycle with Ostorlab",
     text: "RSA Security runs Ostorlab SAST and DAST on each iOS and Android release as part of its formal security sign-off.",
     href: "https://www.ostorlab.co/case-studies/rsa-security",
-    img: { src: "/assets/case-studies/rsa.png", w: 1280, h: 720, position: "50% 50%" },
+    img: { src: "/assets/case-studies/rsa-cover.png", w: 1280, h: 720, position: "50% 50%" },
   },
   {
     company: "Qatar Media Corporation",
@@ -33,7 +32,7 @@ const cases = [
     title: "How QMC Cut Remediation Time from 4 Months to 1 Week with Agentic Security Testing",
     text: "QMC brought the average remediation cycle down from four months to one week, about 17× faster.",
     href: "https://www.ostorlab.co/case-studies/qmc",
-    img: { src: "/assets/case-studies/qmc.png", w: 1280, h: 720, position: "50% 50%" },
+    img: { src: "/assets/case-studies/qmc-cover.png", w: 1280, h: 720, position: "50% 50%" },
   },
 ];
 
