@@ -1,0 +1,66 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 200px 48px 100px;
+  background: var(--join-ways-agentic);
+  color: var(--white);
+}
+.muted { color: var(--text-dark-3); }
+.sub {
+  max-width: 520px;
+  margin: 18px auto 0;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-dark-2);
+  text-align: center;
+}
+
+/* 5-column grid so the rows are deliberately uneven: 2+3 on top, 3+2 below. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  max-width: 1200px;
+  margin: 64px auto 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-dark-10);
+}
+.cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-right: 1px solid var(--line-dark-10);
+  border-bottom: 1px solid var(--line-dark-10);
+}
+.cell:nth-child(1), .cell:nth-child(4) { grid-column: span 2; }
+.cell:nth-child(2), .cell:nth-child(3) { grid-column: span 3; }
+.cell:nth-child(2), .cell:nth-child(4) { border-right: 0; }
+
+.vis { position: relative; display: flex; align-items: center; justify-content: center; height: 300px; overflow: hidden; }
+.stage { position: relative; flex: none; height: 300px; }
+.stage img { max-width: none; }
+.orb {
+  position: absolute;
+  object-fit: contain;
+  animation: pulse 3.2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.text { display: flex; flex-direction: column; gap: 8px; padding: 0 40px 40px; }
+.text strong { font-size: var(--fs-title); font-weight: 600; letter-spacing: -.02em; }
+.text span { font-size: var(--fs-card); line-height: var(--lh-card); color: var(--text-dark-2); }
+.text em { font-style: normal; font-size: var(--fs-label); font-weight: 600; color: var(--cyan); }
+
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; }
+}
+@media (max-width: 900px) {
+  .section { padding: 200px 16px 80px; }
+  .grid { grid-template-columns: 1fr; }
+  .cell:nth-child(n) { grid-column: auto; border-right: 0; }
+  .text { padding: 0 8px 32px; }
+}
