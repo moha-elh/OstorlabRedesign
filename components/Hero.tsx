@@ -33,7 +33,7 @@ export default function Hero() {
           <span aria-hidden="true">★★★★★</span>4.8/5 on Gartner Peer Insights
         </a>
         <h1 className={s.title}>
-          Pentest your <span className={s.muted}>mobile app</span>
+          Pentest your <span className={s.muted}>mobile app</span>{" "}
           <br />
           <span className={s.muted}>and</span> everything behind it.
         </h1>

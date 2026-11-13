@@ -108,6 +108,12 @@
 
 @media (max-width: 900px) {
   .navLeft, .hideSm { display: none; }
+  .nav { grid-template-columns: auto auto; justify-content: space-between; padding: 20px 16px 0; }
+  .logo { justify-self: start; }
+  .logo img { max-width: none; }
+  .title br { display: none; }
+  .stats { flex-direction: column; gap: 20px; }
+  .stats li { border-right: 0; }
 }
 
 .horizon {
