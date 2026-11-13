@@ -24,7 +24,7 @@ export default function CtaFooter() {
       <footer className={s.footer}>
         <div className={s.inner}>
           <div className={s.brand}>
-            <Image src="/assets/brand/ostorlab-logo-white.png" alt="Ostorlab" width={3112} height={622} />
+            <Image src="/assets/brand/ostorlab-logo-white.png" alt="Ostorlab" width={110} height={22} />
             <p>Continuous scanning and agentic pentesting for your mobile app and everything behind it.</p>
           </div>
           {columns.map(([title, links]) => (
