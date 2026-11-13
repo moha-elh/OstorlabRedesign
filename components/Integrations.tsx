@@ -31,12 +31,12 @@ const COPIES = [0, 1, 2, 3];
 export default function Integrations() {
   return (
     <section className={s.section}>
-      <div className={s.head}>
+      <div className={`${s.head} reveal`}>
         <h2 className="h2"><span className={s.muted}>Findings land where</span><br />your team already works.</h2>
         <p>Run scans from CI/CD, push findings to Jira, Linear or ServiceNow, and get told in Slack.</p>
       </div>
 
-      <div className={s.rows}>
+      <div className={`${s.rows} reveal`}>
         {rows.map((row, r) => (
           <div key={r} className={s.row}>
             <ul className={`${s.marquee} ${r === 1 ? s.reverse : ""}`}>

@@ -13,9 +13,9 @@ export default function CtaFooter() {
     <>
       <section className={s.cta}>
         <Image className={s.wave} src="/assets/art/wave.png" alt="" width={1600} height={560} sizes="100vw" />
-        <h2 className={s.title}>See what it finds<br /><span className={s.muted}>in your app.</span></h2>
-        <p className={s.lead}>Book a demo with the team, or start with a free scan of an app from the App Store or Google Play.</p>
-        <div className={s.ctas}>
+        <h2 className={`${s.title} reveal`}>See what it finds<br /><span className={s.muted}>in your app.</span></h2>
+        <p className={`${s.lead} reveal`}>Book a demo with the team, or start with a free scan of an app from the App Store or Google Play.</p>
+        <div className={`${s.ctas} reveal`}>
           <a className="btn btn-light" href="#scan">Scan your app free</a>
           <a className="btn" href="#">Book a demo</a>
         </div>

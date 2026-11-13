@@ -44,7 +44,7 @@ export default function FreeScan() {
     <section id="scan" className={s.section}>
       <Image className={s.scatter} src="/assets/art/scatter.png" alt="" width={1600} height={460} sizes="100vw" />
 
-      <div className={s.trusted}>
+      <div className={`${s.trusted} reveal`}>
         <span>Trusted by banks, fintechs and security teams at</span>
         <ul className={s.logos}>
           {customers.map((c) => (
@@ -55,8 +55,8 @@ export default function FreeScan() {
         </ul>
       </div>
 
-      <h2 className={`h2 ${s.title}`}>Scan your app for free.</h2>
-      <p className={s.sub}>Pick what to scan, paste the link, and get the report by email.</p>
+      <h2 className={`h2 reveal ${s.title}`}>Scan your app for free.</h2>
+      <p className={`${s.sub} reveal`}>Pick what to scan, paste the link, and get the report by email.</p>
 
       {/* ponytail: no scan backend yet, submit is a no-op until the API is wired */}
       <form className={s.form} onSubmit={(e) => e.preventDefault()}>

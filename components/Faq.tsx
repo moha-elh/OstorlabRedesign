@@ -38,11 +38,11 @@ export default function Faq() {
 
   return (
     <section className={s.section}>
-      <h2 className={`h2 h2-sky ${s.rel}`}><span>Questions,</span><br />answered.</h2>
+      <h2 className={`h2 h2-sky reveal ${s.rel}`}><span>Questions,</span><br />answered.</h2>
 
       <div className={s.grid}>
-        <div className={s.col}>{[0, 1, 2, 3].map(item)}</div>
-        <div className={s.col}>{[4, 5, 6, 7].map(item)}</div>
+        <div className={`${s.col} reveal`}>{[0, 1, 2, 3].map(item)}</div>
+        <div className={`${s.col} reveal`}>{[4, 5, 6, 7].map(item)}</div>
       </div>
 
       <p className={s.still}>Still not sure? <a href="#">Book a 20-minute call</a></p>

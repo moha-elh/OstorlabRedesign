@@ -43,9 +43,9 @@ export default function PlatformTour() {
       onFocus={() => setFocus(true)}
       onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setFocus(false); }}
     >
-      <h2 className={`h2 ${s.rel}`}><span className={s.muted}>One platform,</span><br />from finding to fix.</h2>
+      <h2 className={`h2 reveal ${s.rel}`}><span className={s.muted}>One platform,</span><br />from finding to fix.</h2>
 
-      <div className={s.segWrap}>
+      <div className={`${s.segWrap} reveal`}>
         <div className={s.seg} role="tablist" aria-label="Platform views" onKeyDown={keys.onKeyDown}>
           {views.map((v, i) => (
             <button
@@ -67,7 +67,7 @@ export default function PlatformTour() {
       </div>
 
       <div id="tour-panel" role="tabpanel" aria-labelledby={`tour-tab-${active}`}>
-        <div className={s.stage}>
+        <div className={`${s.stage} reveal`}>
           <div className={s.glow} aria-hidden="true" />
           <div className={s.track} style={{ "--i": active } as CSSProperties}>
             {views.map((v, i) => (

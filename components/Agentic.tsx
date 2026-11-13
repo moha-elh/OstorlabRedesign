@@ -35,12 +35,12 @@ const steps = [
 export default function Agentic() {
   return (
     <section className={s.section}>
-      <h2 className="h2"><span className={s.muted}>How agentic testing works.</span><br />It starts where scanners stop.</h2>
-      <p className={s.sub}>AI agents test your app the way an attacker would, on the apps and releases where depth matters.</p>
+      <h2 className="h2 reveal"><span className={s.muted}>How agentic testing works.</span><br />It starts where scanners stop.</h2>
+      <p className={`${s.sub} reveal`}>AI agents test your app the way an attacker would, on the apps and releases where depth matters.</p>
 
       <ol className={s.grid}>
         {steps.map(({ art, title, text, why }) => (
-          <li key={title} className={s.cell}>
+          <li key={title} className={`${s.cell} reveal`}>
             <div className={s.vis} aria-hidden="true">
               <div className={s.stage} style={{ width: art.w }}>
                 <Image src={`/assets/art/agentic/${art.src}.svg`} alt="" width={art.w} height={300} />

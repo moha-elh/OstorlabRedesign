@@ -98,12 +98,12 @@ function AgentArt() {
 export default function TwoWays() {
   return (
     <section className={s.section}>
-      <h2 className="h2"><span className={s.muted}>Two ways to test.</span><br />One platform.</h2>
-      <p className={s.sub}>Start with scanning, then add agentic testing app by app. Both run on one platform.</p>
+      <h2 className="h2 reveal"><span className={s.muted}>Two ways to test.</span><br />One platform.</h2>
+      <p className={`${s.sub} reveal`}>Start with scanning, then add agentic testing app by app. Both run on one platform.</p>
 
       <div className={s.cards}>
         {cards.map((c, i) => (
-          <article key={c.title} className={s.card}>
+          <article key={c.title} className={`${s.card} reveal`}>
             {i === 0 ? <BuildsArt /> : <AgentArt />}
             <div className={s.body}>
               <span className={s.eyebrow}>{c.eyebrow}</span>

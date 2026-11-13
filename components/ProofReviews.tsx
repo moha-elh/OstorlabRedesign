@@ -48,7 +48,7 @@ function Reviews() {
   // The list is rendered twice so the -50% drift loops seamlessly; the copy is hidden from assistive tech.
   return (
     <>
-      <div className={s.revHead}>
+      <div className={`${s.revHead} reveal`}>
         <h3>What security teams say</h3>
         <span><span className={s.stars} aria-hidden="true">★★★★★</span><strong>4.8/5</strong> on Gartner Peer Insights</span>
       </div>
@@ -97,7 +97,7 @@ export default function ProofReviews() {
       <Image className={s.horizon} src="/assets/art/horizon.png" alt="" width={1600} height={640} sizes="120vw" />
       <div className={s.fade} aria-hidden="true" />
 
-      <h2 className={`h2 ${s.rel}`}><span className={s.muted}>Proof from the teams</span><br />who use Ostorlab.</h2>
+      <h2 className={`h2 reveal ${s.rel}`}><span className={s.muted}>Proof from the teams</span><br />who use Ostorlab.</h2>
 
       <div
         className={s.rel}
