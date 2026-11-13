@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ostorlab landing page · design reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#03203D;font-family:"Plus Jakarta Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#FFFFFF;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid #67C9EE;outline-offset:2px}
+.btn{transition:opacity 160ms ease-out,border-color 160ms ease-out}
+.btn:hover{opacity:.9}
+.stat{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 36px;border-right:1px solid rgba(255,255,255,.14);text-align:center}
+.stat strong{font-size:32px;line-height:36px;font-weight:600;letter-spacing:-.03em;color:#FFFFFF}
+.stat span{font-size:13px;color:#A9B4C0}
+.pill{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;background:rgba(14,18,24,.85);border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:600;letter-spacing:.04em;color:#E6EEF5;white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:999px;display:block}
+.f1{animation:fl 6s ease-in-out infinite}.f2{animation:fl 7s ease-in-out .8s infinite}.f3{animation:fl 6.5s ease-in-out 1.6s infinite}.f4{animation:fl 7.5s ease-in-out .4s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.rise{animation:rise 1.6s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.f1,.f2,.f3,.f4,.rise{animation:none}}
+@media (max-width:900px){.h-hero{font-size:38px !important;line-height:44px !important}.navlinks,.hide-sm,.pill{display:none !important}}
+.glass{background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.8);box-shadow:0 20px 50px rgba(3,32,61,.12)}
+.glass.solid{background:#FFFFFF;border-color:#E3E9EF}
+.glass.frost{background:rgba(255,255,255,.9);border-color:rgba(255,255,255,.95);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.chip{display:inline-flex;align-items:center;gap:6px;height:40px;box-sizing:border-box;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid #DCE7F1;font:inherit;font-size:13px;font-weight:600;color:#03203D;cursor:pointer}
+.chip.on{background:#03203D;color:#FFFFFF;border-color:#03203D}
+.mail{display:inline-flex;align-items:center;gap:8px;margin-left:auto;height:40px;box-sizing:border-box;padding:0 14px 0 8px;border-radius:999px;background:rgba(0,129,186,.08);color:#03203D;font-size:13px;font-weight:600}
+.press{display:inline-flex;align-items:center;gap:8px;height:40px;box-sizing:border-box;padding:0 22px;border:0;border-radius:999px;background:linear-gradient(180deg,#1A9BD6,#0081BA);color:#FFFFFF;font:inherit;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 3px 0 #005E8A,0 8px 18px rgba(0,94,138,.35);transition:transform 120ms ease-out,box-shadow 120ms ease-out}
+.press:hover{transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 5px 0 #005E8A,0 12px 24px rgba(0,94,138,.38)}
+.press:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 0 0 #005E8A,0 4px 10px rgba(0,94,138,.3)}
+.how{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px}
+.how span{display:inline-flex;gap:8px;align-items:center}
+.white{display:block;width:auto;filter:brightness(0) invert(1);opacity:.92}
+@media (max-width:900px){.h2{font-size:34px !important;line-height:40px !important}.mail{margin-left:0}}
+
+.wcard{flex:1 1 460px;min-width:0;border-radius:24px;border:1px solid #E3E9EF;background:#FFFFFF;padding:10px;display:flex;flex-direction:column}
+.illo{position:relative;border-radius:18px;background:#F2F5F8;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.rings{position:absolute;width:420px;height:420px;border-radius:999px;background:repeating-radial-gradient(circle,rgba(3,32,61,0) 0 34px,rgba(3,32,61,.05) 34px 35px)}
+.spec{display:grid;grid-template-columns:22px 92px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-top:1px solid #EDF1F5;font-size:15px;line-height:22px}
+.spec .k{font-size:13px;font-weight:600;color:#7D8A97}
+.tile{flex:none;width:56px;height:56px;border-radius:16px;background:#FFFFFF;box-shadow:0 8px 20px rgba(3,32,61,.10),inset 0 0 0 1px #E6EBF0;display:flex;align-items:center;justify-content:center;color:#0081BA;transition:background-color 250ms ease-out,color 250ms ease-out}
+.trow{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);align-items:center;padding:26px 28px;border-radius:24px;transition:background-color 300ms ease-out}
+.trow.on{background:#FFFFFF;box-shadow:0 10px 30px rgba(3,32,61,.06)}
+.trow.on .tile{background:#03203D;color:#67C9EE}
+.node{justify-self:center;width:12px;height:12px;border-radius:999px;background:#F4F6F8;border:2px solid #D3DCE4;box-sizing:border-box;transition:all 300ms ease-out}
+.trow.on .node{border-color:#0081BA;background:#0081BA;box-shadow:0 0 0 6px rgba(0,129,186,.15)}
+.badge{flex:none;width:28px;height:28px;border-radius:999px;background:#E9EEF3;font-size:12px;font-weight:600;color:#4D6578;display:flex;align-items:center;justify-content:center}
+.hstep{position:relative;flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:20px;text-align:left;border:0;background:transparent;font:inherit;color:#FFFFFF;cursor:pointer;transition:background-color 300ms ease-out}
+.hstep.on{background:rgba(255,255,255,.05)}
+.htile{width:52px;height:52px;border-radius:16px;background:#15181E;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#67C9EE;transition:all 300ms ease-out}
+.hstep.on .htile{background:#0081BA;color:#FFFFFF;box-shadow:0 0 30px rgba(0,129,186,.6)}
+.sstep{display:flex;gap:16px;align-items:flex-start;width:100%;padding:20px;border:0;border-radius:18px;background:transparent;text-align:left;font:inherit;color:#03203D;cursor:pointer;transition:background-color 250ms ease-out}
+.sstep.on{background:#FFFFFF;box-shadow:0 10px 30px rgba(3,32,61,.07)}
+.sstep .st{font-size:18px;font-weight:600;color:#7D8A97}.sstep.on .st{color:#03203D}
+.sstep .sd{font-size:14px;line-height:22px;color:#4D6578;margin-top:4px}
+.stile{flex:none;width:44px;height:44px;border-radius:12px;background:#E9EEF3;color:#7D8A97;display:flex;align-items:center;justify-content:center}
+.sstep.on .stile{background:#03203D;color:#67C9EE}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+@media (max-width:900px){.trow{grid-template-columns:40px minmax(0,1fr)}.lft{display:none !important}.spec{grid-template-columns:22px minmax(0,1fr)}.spec .k{display:none}}
+
+.bstep{position:relative;flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:20px;text-align:left;border:0;background:transparent;font:inherit;color:#FFFFFF;cursor:pointer;transition:background-color 300ms ease-out}
+.bstep.on{background:rgba(255,255,255,.12)}
+.btile{width:52px;height:52px;border-radius:16px;background:#1A8FC4;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;color:#FFFFFF;transition:all 300ms ease-out}
+.bstep.on .btile{background:#FFFFFF;color:#0081BA;box-shadow:0 10px 30px rgba(3,32,61,.25)}
+.nstep{position:relative;flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:20px;text-align:left;border:0;background:transparent;font:inherit;color:#FFFFFF;cursor:pointer;transition:background-color 300ms ease-out}
+.nstep.on{background:rgba(255,255,255,.07)}
+.ntile{width:52px;height:52px;border-radius:16px;background:#0A2E50;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;color:#67C9EE;transition:all 300ms ease-out}
+.nstep.on .ntile{background:#0081BA;color:#FFFFFF;box-shadow:0 0 30px rgba(0,129,186,.6)}
+.pnode{position:relative;z-index:1;flex:none;display:flex;flex-direction:column;align-items:center;gap:12px;width:110px;text-align:center}
+.pnode .pt{width:72px;height:72px;border-radius:22px;background:#0A2E50;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:#5E7C9A;transition:all 400ms ease-out}
+.pnode.on .pt{background:#0081BA;color:#FFFFFF;box-shadow:0 0 36px rgba(0,129,186,.65),inset 0 0 0 1px rgba(255,255,255,.3)}
+.pnode .pl{font-size:13px;font-weight:600;color:#5E7C9A;transition:color 400ms ease-out}.pnode.on .pl{color:#FFFFFF}
+.pcon{flex:1 1 40px;height:2px;margin-top:35px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
+.pcon::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#67C9EE,#0081BA);transform-origin:left;transform:scaleX(0);transition:transform 500ms ease-out}
+.pcon.on::after{transform:scaleX(1)}
+.ptab{flex:1 1 0;min-width:0;padding:16px 0 0;border:0;border-top:2px solid rgba(255,255,255,.12);background:none;text-align:left;font:inherit;font-size:14px;font-weight:600;color:#7F98B3;cursor:pointer;transition:all 300ms ease-out}
+.ptab.on{border-top-color:#67C9EE;color:#FFFFFF}
+.ccard{flex:none;width:860px;max-width:82vw;display:flex;gap:0;border-radius:28px;overflow:hidden;background:#0A2E50;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);transition:opacity 500ms ease-out,transform 500ms ease-out;opacity:.35;transform:scale(.92)}
+.ccard.on{opacity:1;transform:scale(1)}
+.cnav{width:48px;height:48px;border-radius:999px;border:0;background:#FFFFFF;color:#03203D;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.25);transition:all 300ms ease-out}.dot.on{width:28px;background:#67C9EE}
+.ctab{display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:transparent;font:inherit;font-size:14px;font-weight:600;color:#B8CADB;cursor:pointer;transition:all 300ms ease-out}
+.ctab .ci{width:32px;height:32px;border-radius:999px;background:#0A2E50;color:#67C9EE;display:flex;align-items:center;justify-content:center}
+.ctab.on{background:#FFFFFF;color:#03203D;border-color:#FFFFFF}.ctab.on .ci{background:#0081BA;color:#FFFFFF}
+
+.bgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.1)}
+.bcell{position:relative;display:flex;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.1);min-width:0}
+.bcell:nth-child(2),.bcell:nth-child(4){border-right:0}
+.vis{position:relative;height:300px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.btxt{padding:0 40px 40px;display:flex;flex-direction:column;gap:8px}
+.btxt strong{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.btxt span{font-size:15px;line-height:24px;color:#B8CADB}
+.btxt em{font-style:normal;font-size:14px;font-weight:600;color:#67C9EE}
+.orb{position:absolute;width:58px;height:58px;border-radius:999px;background:radial-gradient(circle at 35% 30%,#B5ECFF 0%,#2AA6DE 32%,#0081BA 58%,#014E78 100%);box-shadow:0 0 0 7px rgba(255,255,255,.05),0 0 50px rgba(0,129,186,.9);animation:orb 3.2s ease-in-out infinite}
+.orb.sm{width:34px;height:34px;box-shadow:0 0 0 5px rgba(255,255,255,.05),0 0 30px rgba(0,129,186,.9)}
+@keyframes orb{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.halo{position:absolute;border-radius:999px;background:radial-gradient(closest-side,rgba(0,129,186,.55),rgba(0,129,186,0));pointer-events:none}
+.mui{position:absolute;background:#0B2D4C;border:1px solid rgba(255,255,255,.12);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.3);color:#DCE3EA;font-size:12px;text-align:left}
+.mui .lb{font-size:11px;color:#7F98B3}
+.otp{width:28px;height:36px;border-radius:8px;background:#03203D;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#FFFFFF}
+.otp.f{border-color:#67C9EE}
+.otp.c::after{content:"";width:1.5px;height:16px;background:#67C9EE;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.ok{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(103,201,238,.14);color:#9EE3FF;font-size:11px;font-weight:600}
+.flow{stroke-dasharray:4 6;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-20}}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:radial-gradient(closest-side,#000,transparent);mask-image:radial-gradient(closest-side,#000,transparent)}
+.chain{display:flex;align-items:center;gap:0;padding:8px;border-radius:16px;background:#0B2D4C;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.lk{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border-radius:10px;font-size:12px;font-weight:600;color:#DCE3EA;background:#03203D;border:1px solid rgba(255,255,255,.1);white-space:nowrap}
+.lk.ok2{color:#9EE3FF}
+.lk.run{border-color:#67C9EE;color:#FFFFFF}
+.sep{width:16px;height:1px;background:rgba(255,255,255,.25)}
+.isoc{box-sizing:border-box;position:relative;display:flex;flex-direction:column;gap:18px;padding:26px 24px 24px;background:rgba(255,255,255,.03);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.isoc .cap{font-family:"JetBrains Mono",monospace;font-size:15px;line-height:20px;letter-spacing:.02em;text-transform:uppercase;color:#FFFFFF}
+.isoc .bd{font-size:14px;line-height:22px;color:#B8CADB;min-height:88px}
+.isoc .fr{border:1px solid rgba(255,255,255,.14);height:230px;position:relative;overflow:hidden}
+.pix{position:absolute;right:22px;top:24px;width:20px;height:20px;background-image:radial-gradient(#67C9EE 1.2px,transparent 1.5px);background-size:5px 5px}
+@media (max-width:900px){.bgrid{grid-template-columns:1fr}.bcell{grid-column:auto !important;border-right:0}}
+
+.orb{background:url(assets/art/orb.png) center/contain no-repeat !important;box-shadow:none !important;filter:drop-shadow(0 0 22px rgba(0,129,186,.85))}
+.iso4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+.iso4 > div{position:relative;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.1);min-width:0}
+.iso4 > div:last-child{border-right:0}
+.iso4 .art{position:relative;height:310px;display:flex;align-items:center;justify-content:center}
+.iso4 .art::before{content:"";position:absolute;left:50%;top:50%;width:260px;height:260px;transform:translate(-50%,-50%);border-radius:999px;background:radial-gradient(closest-side,rgba(0,129,186,.28),rgba(0,129,186,0))}
+.iso4 .tx{padding:4px 28px 34px;display:flex;flex-direction:column;gap:8px}
+.iso4 .tx strong{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.iso4 .tx span{font-size:14px;line-height:22px;color:#B8CADB}
+.iso4 .tx em{font-style:normal;font-size:13px;font-weight:600;color:#67C9EE}
+@media (max-width:900px){.iso4{grid-template-columns:1fr}.iso4 > div{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}}
+
+.lgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid #E3E9EF;border-bottom:1px solid #E3E9EF}
+.lgrid > div{position:relative;display:flex;flex-direction:column;min-width:0;border-right:1px solid #E3E9EF}
+.lgrid > div:nth-child(2),.lgrid > div:nth-child(4){border-right:0}
+.lgrid > div:nth-child(1),.lgrid > div:nth-child(2){border-bottom:1px solid #E3E9EF}
+.lvis{position:relative;height:320px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lvis .stage{position:relative;flex:none}
+.ltx{padding:4px 40px 40px;display:flex;flex-direction:column;gap:8px}
+.ltx strong{font-size:20px;font-weight:600;letter-spacing:-.02em;color:#03203D}
+.ltx span{font-size:15px;line-height:24px;color:#4D6578}
+.ltx em{font-style:normal;font-size:14px;font-weight:600;color:#0081BA}
+.u{position:absolute;background:#FFFFFF;border:1px solid #E6EBF0;border-radius:14px;box-shadow:0 14px 34px rgba(3,32,61,.08);color:#03203D;font-size:12px;text-align:left}
+.sk{display:block;height:8px;border-radius:99px;background:#EEF2F6}
+.lab{font-size:11px;color:#7D8A97}
+.cell6{width:30px;height:38px;border-radius:9px;border:1px solid #DCE3EA;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;color:#03203D}
+.cell6.on{border-color:#0081BA;box-shadow:0 0 0 3px rgba(0,129,186,.15)}
+.cell6.on::after{content:"";width:1.5px;height:18px;background:#0081BA;animation:blink 1s steps(1) infinite}
+.gchip{position:absolute;display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;background:#16A34A;color:#FFFFFF;font-size:11px;font-weight:600;white-space:nowrap}
+.wchip{position:absolute;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E6EBF0;box-shadow:0 8px 20px rgba(3,32,61,.07);font-size:12px;font-weight:600;color:#03203D;white-space:nowrap}
+.wchip i{width:16px;height:16px;border-radius:999px;background:#16A34A;display:inline-flex;align-items:center;justify-content:center;color:#FFF}
+.ring{position:absolute;left:50%;top:50%;border-radius:999px;transform:translate(-50%,-50%);border:1px solid #E3E9EF}
+.borb{position:absolute;border-radius:999px;background:url(assets/art/orb.png) center/contain no-repeat;filter:drop-shadow(0 10px 18px rgba(0,129,186,.35))}
+.col{position:absolute;top:0;bottom:0;width:1px;background:#EEF2F6}
+.bar{position:absolute;height:32px;border-radius:9px;display:flex;align-items:center;padding:0 12px;font-family:"JetBrains Mono",monospace;font-size:11px;white-space:nowrap}
+.fade-r{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+.fade-b{-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent)}
+@media (max-width:900px){.lgrid{grid-template-columns:1fr}.lgrid > div{grid-column:auto !important;border-right:0;border-bottom:1px solid #E3E9EF}.lvis .stage{transform:scale(.8)}}
+
+.pgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid #E3E9EF;border-bottom:1px solid #E3E9EF}
+.pgrid > div{display:flex;flex-direction:column;min-width:0;border-right:1px solid #E3E9EF}
+.pgrid > div:nth-child(2),.pgrid > div:nth-child(4){border-right:0}
+.pgrid > div:nth-child(1),.pgrid > div:nth-child(2){border-bottom:1px solid #E3E9EF}
+.pvis{height:320px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ptx{padding:0 40px 40px;display:flex;flex-direction:column;gap:8px}
+.ptx strong{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.ptx span{font-size:15px;line-height:24px;color:#4D6578}
+.ptx em{font-style:normal;font-size:14px;font-weight:600;color:#0081BA}
+@media (max-width:900px){.pgrid{grid-template-columns:1fr}.pgrid > div{grid-column:auto !important;border-right:0;border-bottom:1px solid #E3E9EF}}
+
+.dotbg{position:absolute;inset:0;background-image:radial-gradient(rgba(103,201,238,.18) 1.2px,transparent 1.6px);background-size:18px 18px;-webkit-mask-image:radial-gradient(60% 55% at 50% 60%,#000,transparent);mask-image:radial-gradient(60% 55% at 50% 60%,#000,transparent);pointer-events:none}
+.dotbg.w{background-image:radial-gradient(rgba(255,255,255,.22) 1.2px,transparent 1.6px)}
+.gcard{flex:none;width:880px;display:flex;border-radius:28px;overflow:hidden;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);opacity:.35;transform:scale(.93);transition:opacity 500ms ease-out,transform 500ms ease-out}
+.gcard.on{opacity:1;transform:scale(1)}
+.wcard2{flex:none;width:880px;display:flex;border-radius:28px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 60px rgba(3,32,61,.25);opacity:.45;transform:scale(.93);transition:opacity 500ms ease-out,transform 500ms ease-out}
+.wcard2.on{opacity:1;transform:scale(1)}
+.cnav2{width:48px;height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;font:inherit;font-size:20px}
+.cdot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.3);transition:all 300ms ease-out}.cdot.on{width:28px;background:#FFFFFF}
+.stab{position:relative;flex:1 1 0;min-width:0;padding:18px 0 0;border:0;border-top:1px solid rgba(255,255,255,.18);background:none;text-align:left;font:inherit;color:#7F98B3;cursor:pointer}
+.stab.on{color:#FFFFFF}
+.stab .pr{position:absolute;left:0;top:-1px;height:2px;width:0;background:#67C9EE}
+.stab.on .pr{animation:pr 6s linear forwards}
+@keyframes pr{to{width:100%}}
+.ttab{position:relative;display:flex;flex-direction:column;gap:6px;width:100%;padding:20px 22px;border:0;border-radius:18px;background:transparent;text-align:left;font:inherit;color:#03203D;cursor:pointer;transition:background-color 250ms ease-out}
+.ttab.on{background:#FFFFFF;box-shadow:0 12px 30px rgba(3,32,61,.08)}
+.ttab .tt{font-size:17px;font-weight:600;color:#7D8A97}.ttab.on .tt{color:#03203D}
+.ttab .td{display:none;font-size:14px;line-height:22px;color:#4D6578}.ttab.on .td{display:block}
+.ttab .bar2{position:absolute;left:22px;right:22px;bottom:10px;height:2px;border-radius:2px;background:#E6EBF0;overflow:hidden;display:none}
+.ttab.on .bar2{display:block}
+.ttab.on .bar2 i{display:block;height:100%;width:0;background:#0081BA;animation:pr 6s linear forwards}
+.npill{padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;font:inherit;font-size:14px;font-weight:600;color:#B8CADB;cursor:pointer}
+.npill.on{background:#FFFFFF;color:#03203D;border-color:#FFFFFF}
+.frame{border-radius:18px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 70px rgba(3,32,61,.18);border:1px solid #E3E9EF}
+.frame .bar3{display:flex;gap:6px;padding:12px 14px;border-bottom:1px solid #EDF1F5;background:#FAFBFC}
+.frame .bar3 i{width:9px;height:9px;border-radius:999px;background:#DCE3EA}
+.shot2{display:none;width:100%;height:auto}.shot2.on{display:block}
+.bento{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid #DCE3EA;border-bottom:1px solid #DCE3EA}
+.bento > div{display:flex;flex-direction:column;min-width:0;border-right:1px solid #DCE3EA}
+.bento > div:nth-child(2),.bento > div:nth-child(4){border-right:0}
+.bento > div:nth-child(1),.bento > div:nth-child(2){border-bottom:1px solid #DCE3EA}
+.crop{position:relative;height:300px;overflow:hidden;margin:28px 28px 0;border-radius:16px 16px 0 0;border:1px solid #E3E9EF;border-bottom:0;background:#FFFFFF}
+.crop img{position:absolute;width:160%;left:0;top:0}
+.btx{padding:24px 32px 34px;display:flex;flex-direction:column;gap:8px}
+.btx strong{font-size:20px;font-weight:600;letter-spacing:-.02em}.btx span{font-size:15px;line-height:24px;color:#4D6578}
+.lg{position:absolute;width:64px;height:64px;border-radius:999px;background:#FFFFFF;box-shadow:0 10px 24px rgba(3,32,61,.10);border:1px solid #E6EBF0;display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%)}
+.lg img{max-width:34px;max-height:28px}
+.mq{display:flex;gap:16px;width:max-content;animation:mq 40s linear infinite}
+.mq.r{animation-direction:reverse}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mtile{flex:none;width:180px;height:84px;border-radius:18px;background:#FFFFFF;border:1px solid #E6EBF0;display:flex;align-items:center;justify-content:center}
+.mtile img{max-height:28px;max-width:110px}
+.ftile{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:14px;font-weight:600;color:#FFFFFF}
+.ftile img{height:22px;max-width:28px;filter:brightness(0) invert(1);opacity:.9}
+.qa{border-top:1px solid #DCE3EA}
+.qa button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border:0;background:none;text-align:left;font:inherit;font-size:18px;font-weight:600;color:#03203D;cursor:pointer}
+.qa .pm{flex:none;width:32px;height:32px;border-radius:999px;border:1px solid #DCE3EA;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:400;color:#0081BA;transition:transform 250ms ease-out}
+.qa.on .pm{transform:rotate(45deg);background:#03203D;color:#FFFFFF;border-color:#03203D}
+.qa .ans{display:none;padding:0 56px 26px 0;font-size:16px;line-height:26px;color:#4D6578}.qa.on .ans{display:block}
+.ftab{padding:10px 18px;border-radius:999px;border:1px solid #DCE3EA;background:#FFFFFF;font:inherit;font-size:14px;font-weight:600;color:#4D6578;cursor:pointer}
+.ftab.on{background:#03203D;color:#FFFFFF;border-color:#03203D}
+.fcol a{color:#B8CADB}.fcol a:hover{color:#FFFFFF}
+.lcol a{color:#4D6578}.lcol a:hover{color:#03203D}
+@media (max-width:900px){.gcard,.wcard2{width:86vw;flex-direction:column}.bento{grid-template-columns:1fr}.bento > div{grid-column:auto !important;border-right:0;border-bottom:1px solid #DCE3EA}}
+
+.gcard2{flex:none;width:900px;display:flex;border-radius:28px;overflow:hidden;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 30px 70px rgba(0,0,0,.35);opacity:.35;transform:scale(.93);transition:opacity 500ms ease-out,transform 500ms ease-out}
+.gcard2.on{opacity:1;transform:scale(1)}
+.gimg{position:relative;flex:0 0 400px;min-height:400px;overflow:hidden;border-right:1px solid rgba(255,255,255,.12)}
+.gimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left;filter:saturate(.7) brightness(.9)}
+.gimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,32,61,.15) 0%,rgba(3,32,61,.35) 45%,rgba(3,32,61,.95) 100%)}
+.seg{display:inline-flex;gap:4px;padding:5px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.sgb{position:relative;overflow:hidden;padding:10px 18px;border-radius:999px;border:0;background:transparent;font:inherit;font-size:14px;font-weight:600;color:#B8CADB;cursor:pointer}
+.sgb.on{background:#FFFFFF;color:#03203D}
+.sgb .pr{position:absolute;left:12px;right:12px;bottom:4px;height:2px;background:transparent}
+.sgb.on .pr{background:rgba(0,129,186,.2)}.sgb.on .pr i{display:block;height:100%;width:0;background:#0081BA;animation:pr 6s linear forwards}
+.tilt{transform:perspective(1800px) rotateX(16deg);transform-origin:50% 100%}
+.flist{display:flex;flex-direction:column;gap:6px}
+.fl{position:relative;display:flex;flex-direction:column;gap:6px;padding:18px 20px 22px;border:0;border-radius:16px;background:transparent;text-align:left;font:inherit;color:#FFFFFF;cursor:pointer}
+.fl .t{font-size:18px;font-weight:600;color:#7F98B3}.fl .d{display:none;font-size:14px;line-height:22px;color:#B8CADB}
+.fl.on{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.fl.on .t{color:#FFFFFF}.fl.on .d{display:block}
+.fl .pg{position:absolute;left:20px;right:20px;bottom:10px;height:2px;background:rgba(255,255,255,.1);display:none}.fl.on .pg{display:block}.fl.on .pg i{display:block;height:100%;width:0;background:#67C9EE;animation:pr 6s linear forwards}
+.stk{position:absolute;inset:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:#FFFFFF;box-shadow:0 30px 70px rgba(0,0,0,.45);transition:transform 600ms cubic-bezier(.2,.7,.2,1),opacity 600ms ease-out}
+.stk img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.fq{border-radius:18px;background:#F2F5F8;transition:background-color 250ms ease-out,box-shadow 250ms ease-out}
+.fq.on{background:#FFFFFF;box-shadow:0 0 0 1px #0081BA,0 14px 34px rgba(0,129,186,.12)}
+.fq button{display:flex;align-items:center;gap:14px;width:100%;padding:20px 20px;border:0;background:none;text-align:left;font:inherit;font-size:16px;font-weight:600;color:#03203D;cursor:pointer}
+.fq .n{flex:none;width:26px;height:26px;border-radius:8px;background:#FFFFFF;font-size:12px;font-weight:600;color:#7D8A97;display:flex;align-items:center;justify-content:center}
+.fq.on .n{background:#EAF5FB;color:#0081BA}
+.fq .pm2{flex:none;margin-left:auto;width:34px;height:34px;border-radius:999px;background:#03203D;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:300;transition:transform 250ms ease-out}
+.fq.on .pm2{transform:rotate(45deg);background:#FFFFFF;color:#03203D;box-shadow:inset 0 0 0 1px #DCE3EA}
+.fq .ans2{display:none;padding:0 70px 22px 60px;font-size:15px;line-height:24px;color:#4D6578}.fq.on .ans2{display:block}
+.fqd{border-radius:18px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);transition:all 250ms ease-out}
+.fqd.on{background:rgba(255,255,255,.09);box-shadow:inset 0 0 0 1px rgba(103,201,238,.6)}
+.fqd button{display:flex;align-items:center;gap:14px;width:100%;padding:20px;border:0;background:none;text-align:left;font:inherit;font-size:16px;font-weight:600;color:#FFFFFF;cursor:pointer}
+.fqd .n{flex:none;width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.08);font-size:12px;font-weight:600;color:#B8CADB;display:flex;align-items:center;justify-content:center}
+.fqd .pm2{flex:none;margin-left:auto;width:34px;height:34px;border-radius:999px;background:#FFFFFF;color:#03203D;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:300;transition:transform 250ms ease-out}
+.fqd.on .pm2{transform:rotate(45deg);background:#0081BA;color:#FFFFFF}
+.fqd .ans2{display:none;padding:0 70px 22px 60px;font-size:15px;line-height:24px;color:#B8CADB}.fqd.on .ans2{display:block}
+@media (max-width:900px){.gcard2{width:86vw;flex-direction:column}.gimg{flex-basis:220px;min-height:220px}}
+
+.gimg.dt{background:radial-gradient(70% 60% at 50% 40%,rgba(0,129,186,.35),rgba(3,32,61,0)),#021a33}
+.gimg.dt img{object-fit:contain;object-position:50% 35%;filter:none;inset:18px 70px 150px}
+.gimg.dt::after{background:linear-gradient(180deg,rgba(3,32,61,0) 55%,rgba(3,32,61,.9) 100%)}
+.utab{position:relative;padding:0 0 14px;border:0;background:none;font:inherit;font-size:15px;font-weight:600;color:#7F98B3;cursor:pointer}
+.utab.on{color:#FFFFFF}.utab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.12)}
+.utab .pr{position:absolute;left:0;bottom:0;height:2px;width:0;background:#67C9EE;z-index:1}.utab.on .pr{animation:pr 6s linear forwards}
+.scard{flex:none;width:920px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.16);background:#FFFFFF;box-shadow:0 40px 80px rgba(0,0,0,.45);opacity:.3;transform:scale(.9);transition:all 600ms ease-out}
+.scard.on{opacity:1;transform:scale(1)}
+.scard img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top left}
+.gpanel{border-radius:24px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);padding:26px;display:flex;flex-direction:column;gap:18px}
+.ltile{height:72px;border-radius:14px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.ltile img{max-height:26px;max-width:70%}
+.lrow{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;align-items:center;padding:28px 0;border-top:1px solid #DCE3EA}
+.lpill{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1px solid #E3E9EF;font-size:14px;font-weight:600;color:#03203D}
+.lpill img{height:22px;max-width:30px}
+.pnode2{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px;min-width:0}
+.pnode2 .ring2{width:64px;height:64px;border-radius:999px;background:#0A2E50;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 0 0 8px rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#67C9EE}
+.mover{position:absolute;top:31px;width:14px;height:14px;border-radius:999px;background:url(assets/art/orb.png) center/contain no-repeat;filter:drop-shadow(0 0 10px rgba(0,129,186,.9));animation:move 7s linear infinite}
+@keyframes move{from{left:6%}to{left:94%}}
+@media (prefers-reduced-motion:reduce){.mover{animation:none;left:50%}}
+@media (max-width:900px){.scard{width:86vw}.lrow{grid-template-columns:1fr}}
+
+.mq2{display:flex;gap:14px;width:max-content;animation:mq 46s linear infinite}
+.mq2.r{animation-direction:reverse}
+.mrow:hover .mq2{animation-play-state:paused}
+.mt{flex:none;height:84px;padding:0 30px;border-radius:18px;background:#FFFFFF;border:1px solid #E6EBF0;display:flex;align-items:center;justify-content:center;gap:10px;transition:border-color 200ms ease-out,box-shadow 200ms ease-out}
+.mt img{max-height:30px;max-width:140px;filter:grayscale(1) contrast(.9);opacity:.5;transition:filter 200ms ease-out,opacity 200ms ease-out}
+.mt span{font-size:19px;font-weight:600;letter-spacing:-.01em;color:#9AA7B4;transition:color 200ms ease-out}
+.mt:hover{border-color:#C9D6E2;box-shadow:0 10px 24px rgba(3,32,61,.08)}
+.mt:hover img{filter:none;opacity:1}.mt:hover span{color:#03203D}
+@media (prefers-reduced-motion:reduce){.mq2{animation:none}}
+
+.rv{position:relative;display:flex;flex-direction:column;gap:18px;padding:30px;border-radius:24px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.rv q{quotes:none;font-size:19px;line-height:29px;letter-spacing:-.01em;color:#FFFFFF}
+.rv .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
+.rv .av{width:38px;height:38px;border-radius:999px;background:linear-gradient(135deg,#0081BA,#67C9EE);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#FFFFFF}
+.rmq{display:flex;gap:16px;width:max-content;animation:mq 60s linear infinite}.rrow:hover .rmq{animation-play-state:paused}
+.rmq .rv{width:420px;flex:none}
+.bq{display:none}.bq.on{display:flex}
+.rdot{width:44px;height:4px;border-radius:4px;background:rgba(255,255,255,.18);border:0;padding:0;cursor:pointer;overflow:hidden;position:relative}
+.rdot.on::after{content:"";position:absolute;inset:0;background:#67C9EE;transform-origin:left;animation:fill 6s linear forwards}
+.ptype{position:relative;flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px;padding:34px;border-radius:24px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.ptype ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.ptype li{padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.08);font-size:13px;color:#DCE3EA}
+.pstat strong{display:block;font-size:56px;line-height:56px;font-weight:600;letter-spacing:-.05em}.pstat span{font-size:14px;color:#B8CADB}
+@media (prefers-reduced-motion:reduce){.rmq{animation:none}}
+</style>
+<style>sc-if,sc-for{display:contents}</style>
+</head>
+<body>
+<!-- Design reference for the confirmed Ostorlab landing page. Open in a browser at 1440px wide.
+     This file is the source of truth for spacing, colours, type and copy. See ../../IMPLEMENTATION.md. -->
+<div id="page">
+<div style="background: #03203D; min-width: 0; padding: 0; box-sizing: border-box">
+<section style="position: relative; overflow: hidden; background: #0A0C10; border-radius: 0; color: #FFFFFF; min-height: 880px; display: flex; flex-direction: column">
+
+<img class="rise" src="assets/art/horizon.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: -75px; width: 100%; height: auto; pointer-events: none">
+
+<nav aria-label="Main" style="position: relative; z-index: 2; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; padding: 26px 40px 0">
+<div class="navlinks" style="display: flex; gap: 28px; font-size: 14px"><a href="#" style="color: #FFFFFF">Home</a><a href="#" style="color: #A9B4C0">Product</a><a href="#" style="color: #A9B4C0">Solutions</a></div>
+<a href="#" aria-label="Ostorlab home" style="display: flex; justify-self: center"><img src="assets/brand/ostorlab-logo-white.png" alt="Ostorlab" style="height: 22px; width: auto; display: block"></a>
+<div style="display: flex; gap: 24px; align-items: center; justify-content: flex-end; font-size: 14px"><a href="#" class="hide-sm" style="color: #A9B4C0">Pricing</a><a href="#" class="hide-sm" style="color: #A9B4C0">Docs</a><a href="#" class="btn" style="border: 1px solid rgba(255,255,255,0.3); padding: 9px 16px; border-radius: 999px; font-weight: 600">Book a demo</a></div>
+</nav>
+
+<div style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 72px 24px 0">
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; color: #A9B4C0; font-size: 13px"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px">★★★★★</span>4.8/5 on Gartner Peer Insights</a>
+<h1 class="h-hero" style="margin: 0; font-size: 64px; line-height: 68px; font-weight: 600; letter-spacing: -0.04em; max-width: 860px">Pentest your <span style="color: #7D8A97">mobile app</span><br><span style="color: #7D8A97">and</span> everything behind it.</h1>
+<p style="margin: 0; font-size: 16px; line-height: 25px; color: #A9B4C0; max-width: 520px">Continuous scanning on every release, and AI agents that log in, get past pinning and prove each finding with a working exploit.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px"><a href="#" class="btn" style="background: #FFFFFF; color: #0A0C10; font-size: 15px; font-weight: 600; padding: 13px 22px; border-radius: 10px">Scan your app free</a><a href="#" class="btn" style="border: 1px solid rgba(255,255,255,0.25); font-size: 15px; font-weight: 600; padding: 12px 22px; border-radius: 10px">Book a demo</a></div>
+</div>
+
+<div style="position: relative; z-index: 1; margin-top: auto; display: flex; flex-wrap: wrap; justify-content: center; padding: 0 24px 44px">
+<div class="stat"><strong>97.1%</strong><span>verified exploitation on CyberGym</span></div>
+<div class="stat"><strong>&lt;5%</strong><span>false positives, every finding proven</span></div>
+<div class="stat" style="border-right: 0"><strong>159/160</strong><span>Bumble releases scanned before launch</span></div>
+</div>
+</section>
+<div style="height: 0px"></div>
+<section style="position: relative; overflow: hidden; border-radius: 0; color: #FFFFFF; background: radial-gradient(55% 22% at 50% 63%, rgba(90,175,255,.55), rgba(90,175,255,0) 70%), linear-gradient(180deg, #0A0C10 0%, #0A0C10 24%, #0A1426 34%, #0B2550 44%, #0D3F86 53%, #1663C0 61%, #3A93E2 68%, #8CC6F0 77%, #D6EAF8 86%, #F1F6FA 93%, #F4F6F8 100%); padding: 150px 24px 130px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<img src="assets/art/scatter.png" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: auto; pointer-events: none">
+<div style="position: relative; width: 100%; max-width: 1160px; display: flex; flex-direction: column; align-items: center; gap: 28px">
+<span style="font-size: 14px; color: #C9D3DC">Trusted by banks, fintechs and security teams at</span>
+<div style="width: 100%; display: flex; flex-wrap: wrap; gap: 28px 56px; align-items: center; justify-content: space-between"><img class="white" src="assets/customers/nubank.png" alt="Nubank" style="height: 35px"><img class="white" src="assets/customers/pnc.png" alt="PNC" style="height: 32px"><img class="white" src="assets/customers/bread.png" alt="Bread Financial" style="height: 31px"><img class="white" src="assets/customers/google.png" alt="Google" style="height: 35px"><img class="white" src="assets/customers/tiktok.png" alt="TikTok" style="height: 32px"><img class="white" src="assets/customers/rolex.png" alt="Rolex" style="height: 45px"></div>
+</div>
+<h2 class="h2" style="position: relative; margin: 230px 0 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.04em; text-shadow: 0 2px 40px rgba(0,30,80,0.35)">Scan your app for free.</h2>
+<p style="position: relative; margin: 16px 0 0; font-size: 17px; line-height: 27px; color: rgba(255,255,255,0.88); max-width: 520px">Pick what to scan, paste the link, and get the report by email.</p>
+<div style="position: relative; width: 100%; max-width: 720px; margin-top: 34px"><div class="glass " style="position: relative; width: 100%; max-width: 720px; border-radius: 20px; padding: 14px; text-align: left; box-sizing: border-box; color: #03203D">
+<label for="sj-scan" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">{{scanLabel}}</label>
+<input id="sj-scan" type="text" placeholder="{{scanPlaceholder}}" style="width: 100%; box-sizing: border-box; min-height: 44px; border: 0; background: transparent; color: #03203D; font: inherit; font-size: 15px; padding: 0 6px">
+<div role="tablist" aria-label="What to scan" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px">
+<sc-for list="{{scanTabs}}" as="t" hint-placeholder-count="3">
+<sc-if value="{{t.selected}}" hint-placeholder-val="{{false}}"><button type="button" role="tab" aria-selected="true" class="chip on" onClick="{{t.pick}}">{{t.label}}</button></sc-if>
+<sc-if value="{{t.idle}}" hint-placeholder-val="{{true}}"><button type="button" role="tab" aria-selected="false" class="chip" onClick="{{t.pick}}">{{t.label}}</button></sc-if>
+</sc-for>
+<span class="mail"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 999px; background: #0081BA"><svg width="13" height="13" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v.3l-9 5.6-9-5.6v-.3Z"></path><path d="M3 9.2V17.5A2.5 2.5 0 0 0 5.5 20h13a2.5 2.5 0 0 0 2.5-2.5V9.2l-8.5 5.3a1 1 0 0 1-1 0L3 9.2Z"></path></svg></span>Free report</span>
+<button type="button" class="press">Scan free</button>
+</div>
+</div></div>
+<div style="position: relative; margin-top: 22px"><div class="how" style="color: #03203D"><sc-for list="{{scanHow}}" as="h" hint-placeholder-count="3"><span><span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 999px; background: #0081BA"></span>{{h.t}}</span></sc-for></div></div>
+<p style="position: relative; margin: 14px 0 0; font-size: 14px; line-height: 22px; color: #4D6578">Need logged-in flows, runtime behavior and your APIs? <a href="#" style="font-weight: 600; color: #0081BA">Agentic Deep Scan</a></p>
+</section>
+<section style="position: relative; background: #F4F6F8; border-radius: 0; padding: 40px 64px 40px; color: #03203D">
+<h2 class="h2" style="margin: 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.04em; text-align: center"><span style="color: #9FB0C0">Two ways to test.</span><br>One platform.</h2>
+<p style="margin: 18px auto 0; max-width: 520px; text-align: center; font-size: 16px; line-height: 26px; color: #4D6578">Start with scanning, then add agentic testing app by app. Both run on one platform.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 56px">
+<div class="wcard"><div class="illo" style="height: 250px"><span class="rings" aria-hidden="true"></span>
+<div style="position: relative; display: flex; gap: 10px; align-items: flex-end"><span style="width: 70px; height: 90px; border-radius: 14px; background: linear-gradient(180deg, #FFFFFF, #E3ECF5); box-shadow: 0 10px 24px rgba(3,32,61,.10); display: flex; align-items: flex-start; justify-content: center; padding-top: 12px; box-sizing: border-box; font-size: 11px; font-weight: 600; color: #7D8A97">v16.07</span><span style="width: 70px; height: 110px; border-radius: 14px; background: linear-gradient(180deg, #FFFFFF, #E3ECF5); box-shadow: 0 10px 24px rgba(3,32,61,.10); display: flex; align-items: flex-start; justify-content: center; padding-top: 12px; box-sizing: border-box; font-size: 11px; font-weight: 600; color: #7D8A97">v16.08</span><span style="width: 70px; height: 130px; border-radius: 14px; background: linear-gradient(180deg, #FFFFFF, #E3ECF5); box-shadow: 0 10px 24px rgba(3,32,61,.10); display: flex; align-items: flex-start; justify-content: center; padding-top: 12px; box-sizing: border-box; font-size: 11px; font-weight: 600; color: #0081BA">v16.09</span>
+<span style="position: absolute; right: -54px; top: -14px; width: 44px; height: 44px; border-radius: 999px; background: #03203D; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M216,128a88,88,0,1,1-88-88A88,88,0,0,1,216,128Z" opacity="0.2"/><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg></span></div></div>
+<div style="padding: 26px 22px 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #4D6578">Every build and release</span>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.03em">Continuous scanning</h3>
+<p style="margin: 0 0 8px; font-size: 15px; line-height: 24px; color: #4D6578">Automated scanning of mobile apps, web apps, APIs and source code, from CI or on each new store release.</p>
+<div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M216,128a88,88,0,1,1-88-88A88,88,0,0,1,216,128Z" opacity="0.2"/><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg></span><span class="k">Runs</span><span>On every build and store release</span></div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M224,80l-96,56L32,80l96-56Z" opacity="0.2"/><path d="M230.91,172A8,8,0,0,1,228,182.91l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,36,169.09l92,53.65,92-53.65A8,8,0,0,1,230.91,172ZM220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09ZM24,80a8,8,0,0,1,4-6.91l96-56a8,8,0,0,1,8.06,0l96,56a8,8,0,0,1,0,13.82l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,24,80Zm23.88,0L128,126.74,208.12,80,128,33.26Z"/></svg></span><span class="k">Reaches</span><span>Code, dependencies, runtime, store build</span></div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M232,128c0,12.51-17.82,21.95-22.68,33.69-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68c-11.32-4.68-30.65,1.42-39.85-7.78s-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128Z" opacity="0.2"/><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></svg></span><span class="k">You get</span><span>Findings and fixes in minutes, in CI</span></div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M240,132c0,19.88-35.82,36-80,36-19.6,0-37.56-3.17-51.47-8.44h0C146.76,156.85,176,142,176,124V96.72h0C212.52,100.06,240,114.58,240,132ZM176,84c0-19.88-35.82-36-80-36S16,64.12,16,84s35.82,36,80,36S176,103.88,176,84Z" opacity="0.2"/><path d="M184,89.57V84c0-25.08-37.83-44-88-44S8,58.92,8,84v40c0,20.89,26.25,37.49,64,42.46V172c0,25.08,37.83,44,88,44s88-18.92,88-44V132C248,111.3,222.58,94.68,184,89.57ZM232,132c0,13.22-30.79,28-72,28-3.73,0-7.43-.13-11.08-.37C170.49,151.77,184,139,184,124V105.74C213.87,110.19,232,122.27,232,132ZM72,150.25V126.46A183.74,183.74,0,0,0,96,128a183.74,183.74,0,0,0,24-1.54v23.79A163,163,0,0,1,96,152,163,163,0,0,1,72,150.25Zm96-40.32V124c0,8.39-12.41,17.4-32,22.87V123.5C148.91,120.37,159.84,115.71,168,109.93ZM96,56c41.21,0,72,14.78,72,28s-30.79,28-72,28S24,97.22,24,84,54.79,56,96,56ZM24,124V109.93c8.16,5.78,19.09,10.44,32,13.57v23.37C36.41,141.4,24,132.39,24,124Zm64,48v-4.17c2.63.1,5.29.17,8,.17,3.88,0,7.67-.13,11.39-.35A121.92,121.92,0,0,0,120,171.41v23.46C100.41,189.4,88,180.39,88,172Zm48,26.25V174.4a179.48,179.48,0,0,0,24,1.6,183.74,183.74,0,0,0,24-1.54v23.79a165.45,165.45,0,0,1-48,0Zm64-3.38V171.5c12.91-3.13,23.84-7.79,32-13.57V172C232,180.39,219.59,189.4,200,194.87Z"/></svg></span><span class="k">Pricing</span><span>Per app or repository, keeps running without credits</span></div></div>
+<a href="#" style="margin-top: 10px; display: inline-flex; gap: 8px; align-items: center; font-size: 15px; font-weight: 600; color: #0081BA">Compare plans <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div>
+<div class="wcard"><div class="illo" style="height: 250px; background: #0A0C10"><span class="rings" aria-hidden="true" style="background: repeating-radial-gradient(circle, rgba(103,201,238,0) 0 34px, rgba(103,201,238,.10) 34px 35px)"></span>
+<img src="assets/brand/ostorlab-logo-glass.png" alt="" style="position: relative; width: 130px; height: auto; filter: drop-shadow(0 0 24px rgba(103,201,238,.55))"></div>
+<div style="padding: 26px 22px 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #4D6578">When depth matters</span>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.03em">Agentic penetration testing</h3>
+<p style="margin: 0 0 8px; font-size: 15px; line-height: 24px; color: #4D6578">AI agents use the test access you set up, get past runtime protections and follow the app into its APIs, back end and code.</p>
+<div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M216,128a88,88,0,1,1-88-88A88,88,0,0,1,216,128Z" opacity="0.2"/><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg></span><span class="k">Runs</span><span>On the apps and releases that matter</span></div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M224,80l-96,56L32,80l96-56Z" opacity="0.2"/><path d="M230.91,172A8,8,0,0,1,228,182.91l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,36,169.09l92,53.65,92-53.65A8,8,0,0,1,230.91,172ZM220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09ZM24,80a8,8,0,0,1,4-6.91l96-56a8,8,0,0,1,8.06,0l96,56a8,8,0,0,1,0,13.82l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,24,80Zm23.88,0L128,126.74,208.12,80,128,33.26Z"/></svg></span><span class="k">Reaches</span><span>Logged-in flows, APIs, back end, attack chains</span></div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M232,128c0,12.51-17.82,21.95-22.68,33.69-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68c-11.32-4.68-30.65,1.42-39.85-7.78s-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128Z" opacity="0.2"/><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></svg></span><span class="k">You get</span><span>A working exploit behind every finding</span></div><div class="spec"><span style="color: #0081BA"><svg viewBox="0 0 256 256" width="22" height="22" fill="currentColor" aria-hidden="true" style="display: block; flex: none"><path d="M240,132c0,19.88-35.82,36-80,36-19.6,0-37.56-3.17-51.47-8.44h0C146.76,156.85,176,142,176,124V96.72h0C212.52,100.06,240,114.58,240,132ZM176,84c0-19.88-35.82-36-80-36S16,64.12,16,84s35.82,36,80,36S176,103.88,176,84Z" opacity="0.2"/><path d="M184,89.57V84c0-25.08-37.83-44-88-44S8,58.92,8,84v40c0,20.89,26.25,37.49,64,42.46V172c0,25.08,37.83,44,88,44s88-18.92,88-44V132C248,111.3,222.58,94.68,184,89.57ZM232,132c0,13.22-30.79,28-72,28-3.73,0-7.43-.13-11.08-.37C170.49,151.77,184,139,184,124V105.74C213.87,110.19,232,122.27,232,132ZM72,150.25V126.46A183.74,183.74,0,0,0,96,128a183.74,183.74,0,0,0,24-1.54v23.79A163,163,0,0,1,96,152,163,163,0,0,1,72,150.25Zm96-40.32V124c0,8.39-12.41,17.4-32,22.87V123.5C148.91,120.37,159.84,115.71,168,109.93ZM96,56c41.21,0,72,14.78,72,28s-30.79,28-72,28S24,97.22,24,84,54.79,56,96,56ZM24,124V109.93c8.16,5.78,19.09,10.44,32,13.57v23.37C36.41,141.4,24,132.39,24,124Zm64,48v-4.17c2.63.1,5.29.17,8,.17,3.88,0,7.67-.13,11.39-.35A121.92,121.92,0,0,0,120,171.41v23.46C100.41,189.4,88,180.39,88,172Zm48,26.25V174.4a179.48,179.48,0,0,0,24,1.6,183.74,183.74,0,0,0,24-1.54v23.79a165.45,165.45,0,0,1-48,0Zm64-3.38V171.5c12.91-3.13,23.84-7.79,32-13.57V172C232,180.39,219.59,189.4,200,194.87Z"/></svg></span><span class="k">Pricing</span><span>AI credits or an Agentic Pentest package</span></div></div>
+<a href="#" style="margin-top: 10px; display: inline-flex; gap: 8px; align-items: center; font-size: 15px; font-weight: 600; color: #0081BA">See how it works <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div>
+</div>
+</section>
+<section style="position: relative; overflow: hidden; border-radius: 0; padding: 200px 48px 100px; color: #FFFFFF; background: linear-gradient(180deg, #F4F6F8 0%, #CFDCE8 8%, #4E6F92 18%, #0B2D4C 28%, #03203D 38%, #03203D 100%)">
+
+<div style="position: relative"><h2 class="h2" style="margin: 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.04em; text-align: center"><span style="color: #7F98B3">How agentic testing works.</span><br>It starts where scanners stop.</h2>
+<p style="margin: 18px auto 0; max-width: 520px; text-align: center; font-size: 16px; line-height: 26px; color: #B8CADB">AI agents test your app the way an attacker would, on the apps and releases where depth matters.</p></div>
+<div style="position: relative; max-width: 1200px; margin: 64px auto 0" class="bgrid"><div class="bcell" style="grid-column: span 2"><div class="vis"><svg viewBox="0 0 400 300" width="400" height="300" aria-hidden="true"><defs><filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter></defs><defs>
+<linearGradient id="te" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D4A73"></stop><stop offset="1" stop-color="#123A60"></stop></linearGradient>
+<linearGradient id="le" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D2E4F"></stop><stop offset="1" stop-color="#082340"></stop></linearGradient>
+<linearGradient id="re" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A2846"></stop><stop offset="1" stop-color="#061B33"></stop></linearGradient>
+<linearGradient id="lte" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67C9EE"></stop><stop offset="1" stop-color="#0081BA"></stop></linearGradient>
+<linearGradient id="lle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0081BA"></stop><stop offset="1" stop-color="#005E8A"></stop></linearGradient>
+<linearGradient id="lre" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#006E9F"></stop><stop offset="1" stop-color="#004B70"></stop></linearGradient>
+<filter id="ge" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+</defs><ellipse cx="200.0" cy="200.0" rx="120" ry="34" fill="#000" fill-opacity=".22" filter="url(#bl)"></ellipse><g filter="url(#ge)"><polygon points="83.1,162.5 221.7,242.5 221.7,230.5 83.1,150.5" fill="url(#lle)" stroke="#9EE3FF" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="316.9,187.5 221.7,242.5 221.7,230.5 316.9,175.5" fill="url(#lre)" stroke="#9EE3FF" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="178.3,95.5 316.9,175.5 221.7,230.5 83.1,150.5" fill="url(#lte)" stroke="#9EE3FF" stroke-width="1" stroke-linejoin="round"></polygon></g><polygon points="155.0,125.0 168.0,132.5 147.2,144.5 134.2,137.0" fill="rgba(255,255,255,.92)" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1"></polygon><polygon points="173.2,135.5 186.1,143.0 165.4,155.0 152.4,147.5" fill="rgba(255,255,255,.92)" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1"></polygon><polygon points="191.3,146.0 204.3,153.5 183.5,165.5 170.6,158.0" fill="rgba(255,255,255,.92)" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1"></polygon><polygon points="209.5,156.5 222.5,164.0 201.7,176.0 188.7,168.5" fill="rgba(255,255,255,.92)" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1"></polygon><polygon points="227.7,167.0 240.7,174.5 219.9,186.5 206.9,179.0" fill="rgba(255,255,255,.92)" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1"></polygon><polygon points="245.9,177.5 258.9,185.0 238.1,197.0 225.1,189.5" fill="none" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1" stroke-dasharray="2 2"></polygon><image href="assets/art/orb.png" x="216.9" y="102.5" width="58" height="58"></image></svg></div><div class="btxt"><strong>Gets in</strong><span>Handles login, one-time codes and MFA with a dedicated test number or TOTP seed.</span><em>Most of the risk sits behind the login screen.</em></div></div><div class="bcell" style="grid-column: span 3"><div class="vis"><svg viewBox="0 0 600 300" width="600" height="300" aria-hidden="true"><defs><filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter></defs><defs>
+<linearGradient id="tf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D4A73"></stop><stop offset="1" stop-color="#123A60"></stop></linearGradient>
+<linearGradient id="lf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D2E4F"></stop><stop offset="1" stop-color="#082340"></stop></linearGradient>
+<linearGradient id="rf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A2846"></stop><stop offset="1" stop-color="#061B33"></stop></linearGradient>
+<linearGradient id="ltf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67C9EE"></stop><stop offset="1" stop-color="#0081BA"></stop></linearGradient>
+<linearGradient id="llf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0081BA"></stop><stop offset="1" stop-color="#005E8A"></stop></linearGradient>
+<linearGradient id="lrf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#006E9F"></stop><stop offset="1" stop-color="#004B70"></stop></linearGradient>
+<filter id="gf" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+</defs><ellipse cx="300.0" cy="222.0" rx="140" ry="34" fill="#000" fill-opacity=".22" filter="url(#bl)"></ellipse><g><polygon points="189.1,154.0 267.1,199.0 267.1,99.0 189.1,54.0" fill="url(#lf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="280.9,191.0 267.1,199.0 267.1,99.0 280.9,91.0" fill="url(#rf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="203.0,46.0 280.9,91.0 267.1,99.0 189.1,54.0" fill="url(#tf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon></g><g><polygon points="267.1,137.0 319.1,167.0 319.1,129.0 267.1,99.0" fill="url(#lf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="332.9,159.0 319.1,167.0 319.1,129.0 332.9,121.0" fill="url(#rf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="280.9,91.0 332.9,121.0 319.1,129.0 267.1,99.0" fill="url(#tf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon></g><image href="assets/art/orb.png" x="268.1" y="161.0" width="50" height="50"></image><g><polygon points="319.1,229.0 397.0,274.0 397.0,174.0 319.1,129.0" fill="url(#lf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="410.9,266.0 397.0,274.0 397.0,174.0 410.9,166.0" fill="url(#rf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="332.9,121.0 410.9,166.0 397.0,174.0 319.1,129.0" fill="url(#tf)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon></g><rect x="0" y="0" width="0" height="0"></rect></svg></div><div class="btxt"><strong>Gets past</strong><span>Tests the store build, bypasses TLS pinning and obfuscation, checks app shielding on real devices.</span><em>You test what your customers run.</em></div></div><div class="bcell" style="grid-column: span 3"><div class="vis"><svg viewBox="0 0 600 300" width="600" height="300" aria-hidden="true"><defs><filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter></defs><defs>
+<linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D4A73"></stop><stop offset="1" stop-color="#123A60"></stop></linearGradient>
+<linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D2E4F"></stop><stop offset="1" stop-color="#082340"></stop></linearGradient>
+<linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A2846"></stop><stop offset="1" stop-color="#061B33"></stop></linearGradient>
+<linearGradient id="ltg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67C9EE"></stop><stop offset="1" stop-color="#0081BA"></stop></linearGradient>
+<linearGradient id="llg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0081BA"></stop><stop offset="1" stop-color="#005E8A"></stop></linearGradient>
+<linearGradient id="lrg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#006E9F"></stop><stop offset="1" stop-color="#004B70"></stop></linearGradient>
+<filter id="gg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+</defs><ellipse cx="300.0" cy="248.0" rx="150" ry="36" fill="#000" fill-opacity=".22" filter="url(#bl)"></ellipse><g><polygon points="183.1,202.5 235.0,232.5 235.0,202.5 183.1,172.5" fill="url(#lg)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="287.0,202.5 235.0,232.5 235.0,202.5 287.0,172.5" fill="url(#rg)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="235.0,142.5 287.0,172.5 235.0,202.5 183.1,172.5" fill="url(#tg)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon></g><g><polygon points="243.7,237.5 295.7,267.5 295.7,197.5 243.7,167.5" fill="url(#lg)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="347.6,237.5 295.7,267.5 295.7,197.5 347.6,167.5" fill="url(#rg)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="295.7,137.5 347.6,167.5 295.7,197.5 243.7,167.5" fill="url(#tg)" stroke="rgba(158,227,255,.35)" stroke-width="1" stroke-linejoin="round"></polygon></g><g filter="url(#gg)"><polygon points="304.3,272.5 356.3,302.5 356.3,184.5 304.3,154.5" fill="url(#llg)" stroke="#9EE3FF" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="408.3,272.5 356.3,302.5 356.3,184.5 408.3,154.5" fill="url(#lrg)" stroke="#9EE3FF" stroke-width="1" stroke-linejoin="round"></polygon><polygon points="356.3,124.5 408.3,154.5 356.3,184.5 304.3,154.5" fill="url(#ltg)" stroke="#9EE3FF" stroke-width="1" stroke-linejoin="round"></polygon></g><image href="assets/art/orb.png" x="332.3" y="104.5" width="48" height="48"></image></svg></div><div class="btxt"><strong>Goes through</strong><span>Follows traffic into APIs, the web back end and code, hunting business-logic flaws like broken access between accounts.</span><em>That’s where the money moves.</em></div></div><div class="bcell" style="grid-column: span 2"><div class="vis"><svg viewBox="0 0 400 300" width="400" height="300" aria-hidden="true"><defs><filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter></defs><defs>
+<linearGradient id="th" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D4A73"></stop><stop offset="1" stop-color="#123A60"></stop></linearGradient>
+<linearGradient id="lh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D2E4F"></stop><stop offset="1" stop-color="#082340"></stop></linearGradient>
+<linearGradient id="rh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A2846"></stop><stop offset="1" stop-color="#061B33"></stop></linearGradient>
+<linearGradient id="lth" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67C9EE"></stop><stop offset="1" stop-color="#0081BA"></stop></linearGradient>
+<linearGradient id="llh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0081BA"></stop><stop offset="1" stop-color="#005E8A"></stop></linearGradient>
+<linearGradient id="lrh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#006E9F"></stop><stop offset="1" stop-color="#004B70"></stop></linearGradient>
+<filter id="gh" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+</defs><ellipse cx="200.0" cy="216.0" rx="140" ry="40" fill="#000" fill-opacity=".22" filter="url(#bl)"></ellipse><path d="M 72 190 L 72 206 A 128 64 0 0 0 328 206 L 328 190 Z" fill="url(#rh)" stroke="rgba(158,227,255,.35)"></path><ellipse cx="200" cy="190" rx="128" ry="64" fill="url(#th)" stroke="rgba(158,227,255,.45)"></ellipse><polyline points="200.0,133.0 209.9,133.2 219.8,133.9 229.5,134.9 239.0,136.4 248.2,138.3 257.0,140.6 265.4,143.3 273.3,146.3 280.6,149.7 287.3,153.4 293.4,157.3 298.7,161.5 303.3,165.9 307.1,170.5 310.1,175.2 312.3,180.1 313.6,185.0 314.0,190.0 313.6,195.0 312.3,199.9 310.1,204.8 307.1,209.5 303.3,214.1 298.7,218.5 293.4,222.7 287.3,226.6 280.6,230.3 273.3,233.7 265.4,236.7 257.0,239.4 248.2,241.7 239.0,243.6 229.5,245.1 219.8,246.1 209.9,246.8 200.0,247.0 190.1,246.8 180.2,246.1 170.5,245.1 161.0,243.6 151.8,241.7 143.0,239.4 134.6,236.7 126.7,233.7 119.4,230.3 112.7,226.6 106.6,222.7 101.3,218.5 96.7,214.1 92.9,209.5 89.9,204.8 87.7,199.9 86.4,195.0 86.0,190.0" fill="none" stroke="#67C9EE" stroke-width="6" stroke-linecap="round" filter="url(#gh)"></polyline><image href="assets/art/orb.png" x="165.0" y="105.0" width="70" height="70"></image></svg></div><div class="btxt"><strong>Proves</strong><span>One replayable exploit per attack chain, with requests, responses and steps to reproduce.</span><em>Developers fix instead of arguing.</em></div></div></div>
+</section>
+<section style="position: relative; overflow: hidden; background: #03203D; border-radius: 0; padding: 40px 48px 120px; color: #FFFFFF"><img src="assets/art/horizon.png" alt="" aria-hidden="true" style="position: absolute; left: -10%; top: 300px; width: 120%; height: auto; opacity: .9; pointer-events: none">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 360px; background: linear-gradient(180deg, #03203D, rgba(3,32,61,0))"></div>
+<div style="position: relative; text-align: center; "><h2 class="h2" style="margin: 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.04em"><span style="color: #7F98B3">Proof from the teams</span><br>who use Ostorlab.</h2></div>
+<div style="position: relative; margin: 56px -48px 0; overflow: hidden; padding: 10px 0 40px">
+<div style="display: flex; gap: 24px; transform: {{gtrack}}; transition: transform 600ms cubic-bezier(.2,.7,.2,1)"><div class="{{gg0}}"><div class="gimg"><img src="assets/product/screen-remediation.webp" alt="">
+<div style="position: absolute; left: 32px; right: 32px; bottom: 30px; z-index: 1; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #B8CADB">Qatar Media Corporation</span><span style="font-size: 42px; line-height: 46px; font-weight: 600; letter-spacing: -0.04em">4 months → 1 week</span></div></div>
+<div style="flex: 1 1 auto; padding: 44px; display: flex; flex-direction: column; gap: 14px"><strong style="font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.03em">From a four-month fix cycle to one week</strong><span style="font-size: 16px; line-height: 26px; color: #B8CADB">QMC added agentic security testing to its apps and cut the time from finding to fix from four months to one week.</span>
+<a href="#" style="margin-top: auto; display: inline-flex; gap: 8px; align-items: center; font-size: 15px; font-weight: 600; color: #67C9EE">Read the case study <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div><div class="{{gg1}}"><div class="gimg"><img src="assets/product/screen-release-monitor.webp" alt="">
+<div style="position: absolute; left: 32px; right: 32px; bottom: 30px; z-index: 1; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #B8CADB">Bumble Inc.</span><span style="font-size: 42px; line-height: 46px; font-weight: 600; letter-spacing: -0.04em">159 / 160</span></div></div>
+<div style="flex: 1 1 auto; padding: 44px; display: flex; flex-direction: column; gap: 14px"><strong style="font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.03em">99% of releases scanned before launch</strong><span style="font-size: 16px; line-height: 26px; color: #B8CADB">Bumble scans its iOS and Android store releases with Ostorlab before they go live: 159 of 160.</span>
+<a href="#" style="margin-top: auto; display: inline-flex; gap: 8px; align-items: center; font-size: 15px; font-weight: 600; color: #67C9EE">Read the case study <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div><div class="{{gg2}}"><div class="gimg"><img src="assets/product/screen-evidence.webp" alt="">
+<div style="position: absolute; left: 32px; right: 32px; bottom: 30px; z-index: 1; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #B8CADB">RSA Security</span><span style="font-size: 42px; line-height: 46px; font-weight: 600; letter-spacing: -0.04em">Every release</span></div></div>
+<div style="flex: 1 1 auto; padding: 44px; display: flex; flex-direction: column; gap: 14px"><strong style="font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.03em">Part of the formal security sign-off</strong><span style="font-size: 16px; line-height: 26px; color: #B8CADB">RSA runs Ostorlab static and dynamic testing on every iOS and Android release before it ships.</span>
+<a href="#" style="margin-top: auto; display: inline-flex; gap: 8px; align-items: center; font-size: 15px; font-weight: 600; color: #67C9EE">Read the case study <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div></div>
+<button type="button" class="cnav2" aria-label="Previous case study" onClick="{{cprev}}" style="position: absolute; left: calc(50% - 496px); top: 210px">‹</button>
+<button type="button" class="cnav2" aria-label="Next case study" onClick="{{cnext}}" style="position: absolute; right: calc(50% - 496px); top: 210px">›</button></div>
+<div style="position: relative; display: flex; gap: 8px; justify-content: center"><span class="{{cd0}}"></span><span class="{{cd1}}"></span><span class="{{cd2}}"></span></div><div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; max-width: 1240px; margin: 80px auto 0; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.12)"><strong style="font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -0.03em">What security teams say</strong><span style="display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: #B8CADB"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><strong style="font-weight: 600; color: #FFFFFF">4.8/5</strong> on Gartner Peer Insights</span></div><div class="rrow" style="position: relative; margin: 28px -48px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent)"><div class="rmq"><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>Very efficient team and knowledgeable support engineers. The product keeps evolving and they take customer input seriously.</q><figcaption class="who"><span class="av">SA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Senior AppSec Engineer</strong><span style="font-size: 13px; color: #7F98B3">Banking · Gartner Peer Insights</span></span></figcaption></figure><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>“The UI is easy to use. It took us a small amount of work to integrate the platform with our CI/CD.”</q><figcaption class="who"><span class="av">OA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Operations Associate</strong><span style="font-size: 13px; color: #7F98B3">IT Services · Gartner Peer Insights</span></span></figcaption></figure><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>It made evaluating our internal mobile apps easy. Onboarding was smooth and the UI automation is great.</q><figcaption class="who"><span class="av">OA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Operations Associate</strong><span style="font-size: 13px; color: #7F98B3">IT Services · Gartner Peer Insights</span></span></figcaption></figure><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>Very professional and technical. Unlike other vendors, the team after the sale was excellent.</q><figcaption class="who"><span class="av">SA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Security Architect</strong><span style="font-size: 13px; color: #7F98B3">Media · Gartner Peer Insights</span></span></figcaption></figure><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>Very efficient team and knowledgeable support engineers. The product keeps evolving and they take customer input seriously.</q><figcaption class="who"><span class="av">SA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Senior AppSec Engineer</strong><span style="font-size: 13px; color: #7F98B3">Banking · Gartner Peer Insights</span></span></figcaption></figure><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>“The UI is easy to use. It took us a small amount of work to integrate the platform with our CI/CD.”</q><figcaption class="who"><span class="av">OA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Operations Associate</strong><span style="font-size: 13px; color: #7F98B3">IT Services · Gartner Peer Insights</span></span></figcaption></figure><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>It made evaluating our internal mobile apps easy. Onboarding was smooth and the UI automation is great.</q><figcaption class="who"><span class="av">OA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Operations Associate</strong><span style="font-size: 13px; color: #7F98B3">IT Services · Gartner Peer Insights</span></span></figcaption></figure><figure class="rv" style="margin: 0;"><span aria-hidden="true" style="color: #FBBF24; letter-spacing: 2px; font-size: 14px">★★★★★</span><q>Very professional and technical. Unlike other vendors, the team after the sale was excellent.</q><figcaption class="who"><span class="av">SA</span><span style="display: flex; flex-direction: column"><strong style="font-size: 14px; font-weight: 600">Security Architect</strong><span style="font-size: 13px; color: #7F98B3">Media · Gartner Peer Insights</span></span></figcaption></figure></div></div><p style="position: relative; margin: 24px auto 0; max-width: 720px; text-align: center; font-size: 12px; line-height: 18px; color: #7F98B3">Reviews from Gartner Peer Insights, shortened. Gartner Peer Insights content reflects the opinions of individual end users and does not represent the views of Gartner or its affiliates.</p></section>
+<section style="position: relative; overflow: hidden; background: #03203D; border-radius: 0; padding: 40px 48px 120px; color: #FFFFFF"><div style="position: relative; text-align: center; "><h2 class="h2" style="margin: 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.04em"><span style="color: #7F98B3">One platform,</span><br>from finding to fix.</h2></div>
+<div style="position: relative; display: flex; justify-content: center; margin-top: 32px"><div class="seg"><button type="button" class="{{sg0}}" onClick="{{tsel0}}">Evidence<span class="pr"><i></i></span></button><button type="button" class="{{sg1}}" onClick="{{tsel1}}">Remediation<span class="pr"><i></i></span></button><button type="button" class="{{sg2}}" onClick="{{tsel2}}">Autofix<span class="pr"><i></i></span></button><button type="button" class="{{sg3}}" onClick="{{tsel3}}">Attack surface<span class="pr"><i></i></span></button></div></div>
+<div style="position: relative; margin: 48px -48px 0; overflow: hidden; padding: 10px 0 30px">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 1300px; height: 700px; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(0,129,186,.5), rgba(0,129,186,0))"></div>
+<div style="position: relative; display: flex; gap: 32px; transform: {{strack}}; transition: transform 700ms cubic-bezier(.2,.7,.2,1)"><div class="{{sc0}}"><img src="assets/product/screen-evidence.webp" alt="Ostorlab evidence view"></div><div class="{{sc1}}"><img src="assets/product/screen-remediation.webp" alt="Ostorlab remediation view"></div><div class="{{sc2}}"><img src="assets/product/screen-autofix.webp" alt="Ostorlab autofix view"></div><div class="{{sc3}}"><img src="assets/product/screen-attack-surface.webp" alt="Ostorlab attack surface view"></div></div></div>
+<p style="position: relative; margin: 8px auto 0; max-width: 560px; text-align: center; font-size: 16px; line-height: 26px; color: #B8CADB">{{tdesc}}</p></section>
+<section style="position: relative; overflow: hidden; background: linear-gradient(180deg, #03203D 0px, #0B2D4C 60px, #5E7C9A 150px, #C9D6E2 230px, #F4F6F8 300px); border-radius: 0; padding: 300px 48px 110px; color: #03203D"><div style="position: relative; text-align: center; "><h2 class="h2" style="margin: 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.04em"><span style="color: #9FB0C0">Findings land where</span><br>your team already works.</h2><p style="margin: 18px auto 0; max-width: 540px; font-size: 16px; line-height: 26px; color: #4D6578">Run scans from CI/CD, push findings to Jira, Linear or ServiceNow, and get told in Slack.</p></div>
+<div style="position: relative; margin: 56px -48px 0; display: flex; flex-direction: column; gap: 14px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)">
+<div class="mrow"><div class="mq2"><div class="mt"><img src="assets/integrations/jira.png" alt="Jira"></div><div class="mt"><img src="assets/integrations/github.png" alt="GitHub"></div><div class="mt"><img src="assets/integrations/slack.png" alt="" style="max-height: 26px"><span>Slack</span></div><div class="mt"><img src="assets/integrations/linear.png" alt="" style="max-height: 26px"><span>Linear</span></div><div class="mt"><img src="assets/integrations/gitlab.png" alt="GitLab"></div><div class="mt"><img src="assets/integrations/bitrise.png" alt="Bitrise"></div><div class="mt"><img src="assets/integrations/jira.png" alt="Jira"></div><div class="mt"><img src="assets/integrations/github.png" alt="GitHub"></div><div class="mt"><img src="assets/integrations/slack.png" alt="" style="max-height: 26px"><span>Slack</span></div><div class="mt"><img src="assets/integrations/linear.png" alt="" style="max-height: 26px"><span>Linear</span></div><div class="mt"><img src="assets/integrations/gitlab.png" alt="GitLab"></div><div class="mt"><img src="assets/integrations/bitrise.png" alt="Bitrise"></div></div></div>
+<div class="mrow"><div class="mq2 r"><div class="mt"><img src="assets/integrations/jenkins.png" alt="Jenkins"></div><div class="mt"><img src="assets/integrations/circleci.png" alt="CircleCI"></div><div class="mt"><img src="assets/integrations/servicenow.png" alt="ServiceNow"></div><div class="mt"><img src="assets/integrations/bitbucket.png" alt="" style="max-height: 26px"><span>Bitbucket</span></div><div class="mt"><img src="assets/integrations/aws.png" alt="AWS"></div><div class="mt"><img src="assets/integrations/google-cloud.png" alt="" style="max-height: 26px"><span>Google Cloud</span></div><div class="mt"><img src="assets/integrations/jenkins.png" alt="Jenkins"></div><div class="mt"><img src="assets/integrations/circleci.png" alt="CircleCI"></div><div class="mt"><img src="assets/integrations/servicenow.png" alt="ServiceNow"></div><div class="mt"><img src="assets/integrations/bitbucket.png" alt="" style="max-height: 26px"><span>Bitbucket</span></div><div class="mt"><img src="assets/integrations/aws.png" alt="AWS"></div><div class="mt"><img src="assets/integrations/google-cloud.png" alt="" style="max-height: 26px"><span>Google Cloud</span></div></div></div></div>
+<div style="text-align: center; margin-top: 40px"><a href="#" style="display: inline-flex; gap: 8px; align-items: center; font-size: 15px; font-weight: 600; color: #0081BA">View all integrations <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></section>
+<section style="position: relative; overflow: hidden; background: linear-gradient(180deg, #F4F6F8 0px, #C9D6E2 70px, #5E7C9A 150px, #0B2D4C 230px, #03203D 300px); border-radius: 0; padding: 300px 48px 110px; color: #FFFFFF"><span class="dotbg" aria-hidden="true"></span><div style="position: relative; text-align: center; "><h2 class="h2" style="margin: 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.04em"><span style="color: #7F98B3">Questions,</span><br>answered.</h2></div>
+<div style="position: relative; max-width: 1180px; margin: 48px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 10px"><div class="{{fd2_0}}"><button type="button" onClick="{{ft0}}"><span class="n">1</span>What does the free scan cover?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">A static analysis of your public store build, web app or source code. It doesn’t log in, test runtime behaviour or attack your APIs. The report is emailed when it’s ready.</div></div><div class="{{fd2_1}}"><button type="button" onClick="{{ft1}}"><span class="n">2</span>Do I need to install anything or ship a special build?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">No. Pick your app from the store, upload a build, or point at a web app or API. Scans run on the build you ship.</div></div><div class="{{fd2_2}}"><button type="button" onClick="{{ft2}}"><span class="n">3</span>Does agentic testing replace a manual pentest?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">For application penetration testing, yes. AI agents log in, get past runtime protections and follow the app into its APIs and back end, and every confirmed finding comes with a working exploit.</div></div><div class="{{fd2_3}}"><button type="button" onClick="{{ft3}}"><span class="n">4</span>How do the agents get past login and MFA?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">You set up test access once: a dedicated test number or a TOTP seed. The agents use it to handle one-time codes and MFA.</div></div></div><div style="display: flex; flex-direction: column; gap: 10px"><div class="{{fd2_4}}"><button type="button" onClick="{{ft4}}"><span class="n">5</span>Can I use my own AI model account?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">Yes. Bring your own key and the agents run on your model provider account, with a spend limit per scan.</div></div><div class="{{fd2_5}}"><button type="button" onClick="{{ft5}}"><span class="n">6</span>What happens when AI credits run out?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">Continuous scanning keeps running. Agentic testing uses AI credits or an Agentic Pentest package, only where you choose.</div></div><div class="{{fd2_6}}"><button type="button" onClick="{{ft6}}"><span class="n">7</span>How is it priced?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">Routine scanning is priced per app or repository. Agentic testing runs on credits or a package, so you pay for depth where you use it.</div></div><div class="{{fd2_7}}"><button type="button" onClick="{{ft7}}"><span class="n">8</span>Is Ostorlab compliant and can it run on-premises?<span class="pm2" aria-hidden="true">+</span></button><div class="ans2">Ostorlab has a SOC 2 Type II report, supports SAML SSO, and offers an on-premises scanner.</div></div></div></div>
+<p style="position: relative; margin: 40px 0 0; text-align: center; font-size: 15px; color: #B8CADB">Still not sure? <a href="#" style="font-weight: 600; color: #67C9EE">Book a 20-minute call</a></p></section>
+<section style="position: relative; overflow: hidden; background: #03203D; border-radius: 0; padding: 40px 48px 48px; color: #FFFFFF"><div style="position: relative; text-align: center; padding: 60px 0 0; min-height: 700px"><img src="assets/art/wave.png" alt="" aria-hidden="true" style="position: absolute; left: -48px; width: calc(100% + 96px); bottom: -60px; height: auto; pointer-events: none; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 60%, transparent 100%)"><h2 class="h-cta" style="position: relative; margin: 0; font-size: 80px; line-height: 84px; font-weight: 600; letter-spacing: -0.05em">See what it finds<br><span style="color: #7F98B3">in your app.</span></h2>
+<p style="position: relative; margin: 20px auto 0; max-width: 480px; font-size: 16px; line-height: 26px; color: #B8CADB">Book a demo with the team, or start with a free scan of an app from the App Store or Google Play.</p><div style="position: relative; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 32px"><a href="#" class="btn" style="background: #FFFFFF; color: #03203D; font-size: 15px; font-weight: 600; padding: 14px 24px; border-radius: 10px">Scan your app free</a><a href="#" class="btn" style="border: 1px solid rgba(255,255,255,.3); color: #FFFFFF; font-size: 15px; font-weight: 600; padding: 13px 24px; border-radius: 10px">Book a demo</a></div></div>
+<div style="position: relative"><div style="position: relative; display: flex; flex-wrap: wrap; gap: 40px 56px; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding-top: 44px; border-top: 1px solid rgba(255,255,255,.12)">
+<div style="flex: 1 1 260px; max-width: 320px; display: flex; flex-direction: column; gap: 14px"><img src="assets/brand/ostorlab-logo-white.png" alt="Ostorlab" style="height: 22px; width: auto; align-self: flex-start"><span style="font-size: 14px; line-height: 22px; color: #7F98B3">Continuous scanning and agentic pentesting for your mobile app and everything behind it.</span></div><div class="fcol" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px"><strong style="font-weight: 600; margin-bottom: 4px">Product</strong><a href="#">Mobile apps</a><a href="#">Web and APIs</a><a href="#">Source code</a><a href="#">Attack surface</a></div><div class="fcol" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px"><strong style="font-weight: 600; margin-bottom: 4px">Solutions</strong><a href="#">Banking and fintech</a><a href="#">Healthcare</a><a href="#">Gaming</a><a href="#">High tech</a></div><div class="fcol" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px"><strong style="font-weight: 600; margin-bottom: 4px">Resources</strong><a href="#">Blog</a><a href="#">Case studies</a><a href="#">Research</a><a href="#">Documentation</a></div><div class="fcol" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px"><strong style="font-weight: 600; margin-bottom: 4px">Company</strong><a href="#">Book a demo</a><a href="#">Partners</a><a href="#">Trust Center</a><a href="#">Contact</a></div>
+<div style="flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); font-size: 13px; color: #7F98B3"><span>© 2026 Ostorlab · SOC 2 Type II · 4.8/5 on Gartner</span><span style="display: flex; gap: 20px"><a href="#" style="color: inherit">Terms</a><a href="#" style="color: inherit">Privacy</a><a href="#" style="color: inherit">LinkedIn</a><a href="#" style="color: inherit">GitHub</a></span></div></div></div><div aria-hidden="true" style="position: relative; height: 170px; overflow: hidden; margin: 44px -48px -48px"><img src="assets/brand/ostorlab-logo-white.png" alt="" style="position: absolute; left: 48px; right: 48px; width: calc(100% - 96px); top: 0; height: auto; opacity: .07"></div></section>
+</div>
+</div>
+<script>
+/* Tiny runtime for this reference page only. It reproduces the canvas behaviour:
+   {{holes}} in attributes and text, onClick="{{handler}}", <sc-if value="{{x}}">, <sc-for list="{{xs}}" as="t">.
+   The real build should replace this with your framework's own state (see IMPLEMENTATION.md). */
+class DCLogic {
+  constructor(root) { this.root = root; this.state = {}; }
+  setState(p) { this.state = Object.assign({}, this.state, p); render(this); }
+}
+const HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+const get = (o, path) => path.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
+let BIND = [], IFS = [], FORS = [], V = {};
+function fill(str, scope) { return str.replace(HOLE, (_, k) => { const x = get(scope, k); return x == null ? '' : String(x); }); }
+function scan(root) {
+  root.querySelectorAll('sc-for').forEach((el) => { FORS.push({ el, list: el.getAttribute('list').replace(HOLE, '$1'), as: el.getAttribute('as'), tpl: el.innerHTML, last: null }); el.innerHTML = ''; });
+  const walk = (node) => {
+    if (node.nodeType === 3) { if (HOLE.test(node.data)) BIND.push({ node, tpl: node.data, text: true }); HOLE.lastIndex = 0; return; }
+    if (node.nodeType !== 1) return;
+    if (node.tagName === 'SC-IF') IFS.push({ el: node, key: node.getAttribute('value').replace(HOLE, '$1') });
+    for (const a of Array.from(node.attributes)) {
+      if (!a.value.includes('{{')) continue;
+      if (/^on/i.test(a.name)) { const key = a.value.replace(HOLE, '$1').trim(); const ev = a.name.slice(2).toLowerCase(); node.removeAttribute(a.name); node.addEventListener(ev, (e) => { const f = V[key]; if (typeof f === 'function') f(e); }); }
+      else if (node.tagName !== 'SC-IF' && node.tagName !== 'SC-FOR') BIND.push({ node, attr: a.name, tpl: a.value });
+    }
+    node.childNodes.forEach(walk);
+  };
+  walk(root);
+}
+function render(comp) {
+  V = comp.renderVals();
+  for (const b of BIND) { const v = fill(b.tpl, V); if (b.text) { if (b.node.data !== v) b.node.data = v; } else if (b.node.getAttribute(b.attr) !== v) b.node.setAttribute(b.attr, v); }
+  for (const i of IFS) i.el.style.display = get(V, i.key) ? 'contents' : 'none';
+  for (const f of FORS) {
+    const items = get(V, f.list) || [];
+    const sig = JSON.stringify(items);
+    if (sig === f.last) { f.items = items; continue; }
+    f.last = sig; f.items = items;
+    f.el.innerHTML = items.map((it, n) => {
+      let h = f.tpl.replace(/<sc-if value="\{\{\s*([^}]+?)\s*\}\}"[^>]*>([\s\S]*?)<\/sc-if>/g, (_, k, inner) => (get({ [f.as]: it }, k) ? inner : ''));
+      h = h.replace(/on(\w+)="\{\{\s*([^}]+?)\s*\}\}"/gi, (_, ev, k) => `data-ev="${ev.toLowerCase()}" data-fn="${k}" data-n="${n}"`);
+      return fill(h, { [f.as]: it });
+    }).join('');
+    f.el.querySelectorAll('[data-fn]').forEach((el) => el.addEventListener(el.dataset.ev, (e) => { const fn = get({ [f.as]: f.items[+el.dataset.n] }, el.dataset.fn); if (typeof fn === 'function') fn(e); }));
+  }
+}
+function boot(Component) {
+  const root = document.getElementById('page');
+  scan(root);
+  const c = new Component(root);
+  render(c);
+  if (c.componentDidMount) c.componentDidMount();
+}
+
+class Component extends DCLogic {
+  componentDidMount() { this.timer = setInterval(() => { const s = ((this.state && this.state.step) || 0); this.setState({ step: (s + 1) % 4 }); }, 3400); this.t2 = setInterval(() => { const st = this.state || {}; this.setState({ cs: ((st.cs || 0) + 1) % 3, tour: ((st.tour || 0) + 1) % 4, rq: ((st.rq || 0) + 1) % 4 }); }, 6000); }
+  componentWillUnmount() { clearInterval(this.timer); clearInterval(this.t2); }
+  renderVals() {
+    const st = this.state || {};
+    const scan = st.scan || 'mobile';
+    const step = st.step || 0;
+    const defs = {
+      mobile: { label: 'Mobile app', ph: 'Paste a Play Store, App Store or AppGallery link…', aria: 'Store link', how: ['Static analysis of the public store build', 'No login, runtime or back-end API testing', 'Report emailed when ready'] },
+      web: { label: 'Web & API', ph: 'https://app.yourcompany.com — only sites you own', aria: 'Website address', how: ['Passive crawl, TLS, security headers, known-vulnerable components', 'No login, form submission or attack payloads', 'Report emailed when ready'] },
+      source: { label: 'Source code', ph: 'github.com/your-org/your-repo, or drop a .zip', aria: 'Repository', how: ['Code, dependencies and hardcoded secrets', 'No build, runtime or exploit testing', 'Report emailed when ready'] }
+    };
+    const cur = defs[scan];
+    const v = {
+      scanTabs: Object.keys(defs).map((k) => ({ label: defs[k].label, selected: k === scan, idle: k !== scan, pick: () => this.setState({ scan: k }) })),
+      scanPlaceholder: cur.ph, scanLabel: cur.aria, scanHow: cur.how.map((t) => ({ t: t })),
+      lineH: 'calc(' + (step / 3) + ' * (100% - 80px))', lineW: 'calc(' + (step / 3) + ' * (100% - 96px))'
+    };
+    for (let i = 0; i < 4; i++) {
+      v['row' + i] = i === step ? 'trow on' : 'trow'; v['h' + i] = i === step ? 'hstep on' : 'hstep'; v['s' + i] = i === step ? 'sstep on' : 'sstep'; v['b' + i] = i === step ? 'bstep on' : 'bstep'; v['n' + i] = i === step ? 'nstep on' : 'nstep';
+      v['e' + i] = i === step; v['go' + i] = () => { this.setState({ step: i }); };
+    }
+    const S = [{"t": "Gets in", "d": "Handles login, one-time codes and MFA with a dedicated test number or TOTP seed.", "w": "Most of the risk sits behind the login screen."}, {"t": "Gets past", "d": "Tests the store build, bypasses TLS pinning and obfuscation, checks app shielding on real devices.", "w": "You test what your customers run."}, {"t": "Goes through", "d": "Follows traffic into APIs, the web back end and code, hunting business-logic flaws like broken access between accounts.", "w": "That\u2019s where the money moves."}, {"t": "Proves", "d": "One replayable exploit per attack chain, with requests, responses and steps to reproduce.", "w": "Developers fix instead of arguing."}];
+    const thr = [1, 2, 4, 5];
+    for (let j = 0; j < 6; j++) { v['p' + j] = j <= thr[step] ? 'pnode on' : 'pnode'; v['c' + j] = j <= thr[step] ? 'pcon on' : 'pcon'; }
+    for (let i = 0; i < 4; i++) { v['t' + i] = i === step ? 'ptab on' : 'ptab'; v['k' + i] = i === step ? 'ccard on' : 'ccard'; v['d' + i] = i === step ? 'dot on' : 'dot'; v['q' + i] = i === step ? 'ctab on' : 'ctab'; }
+    v.curT = S[step].t; v.curD = S[step].d; v.curW = S[step].w;
+    v.track = 'translateX(calc(50% - 430px - ' + step + ' * 884px))';
+    v.prog = ((step + 1) * 25) + '%';
+    v.prev = () => this.setState({ step: (step + 3) % 4 });
+    v.next = () => this.setState({ step: (step + 1) % 4 });
+    const cs = st.cs || 0;
+    const tour = st.tour || 0;
+    const fcat = st.fcat || 'free';
+    const fo = (st.fo === undefined) ? 0 : st.fo;
+    const TD = ["Intercepted traffic, file activity, function calls and decompiled code behind every finding, in one place.", "Ranked by business impact, sent to your tickets with developer context, retested to confirm the fix.", "A secure code change for each finding, with its reasoning, applied in one click.", "Every app, domain and API carrying your name, found through app stores, registries and crawling."];
+    for (let i = 0; i < 3; i++) {
+      v['gc' + i] = i === cs ? 'gcard on' : 'gcard'; v['wc' + i] = i === cs ? 'wcard2 on' : 'wcard2';
+      v['cd' + i] = i === cs ? 'cdot on' : 'cdot'; v['st2' + i] = i === cs ? 'stab on' : 'stab'; v['cs' + i] = i === cs;
+      v['csel' + i] = () => this.setState({ cs: i });
+    }
+    v.ctrack = 'translateX(calc(50% - 440px - ' + cs + ' * 904px))';
+    v.cprev = () => this.setState({ cs: (cs + 2) % 3 });
+    v.cnext = () => this.setState({ cs: (cs + 1) % 3 });
+    for (let i = 0; i < 4; i++) {
+      v['sh' + i] = i === tour ? 'shot2 on' : 'shot2'; v['tt' + i] = i === tour ? 'ttab on' : 'ttab'; v['np' + i] = i === tour ? 'npill on' : 'npill';
+      v['tsel' + i] = () => this.setState({ tour: i });
+    }
+    v.tdesc = TD[tour];
+    for (let i = 0; i < 8; i++) { v['fq' + i] = i === fo ? 'qa on' : 'qa'; v['fqt' + i] = () => this.setState({ fo: fo === i ? -1 : i }); }
+    ['free', 'agent', 'plans'].forEach((k) => { v['fc' + k] = k === fcat ? 'ftab on' : 'ftab'; v['fv' + k] = k === fcat; v['fcs' + k] = () => this.setState({ fcat: k, fo: { free: 0, agent: 2, plans: 5 }[k] }); });
+    for (let i = 0; i < 3; i++) { v['gg' + i] = i === (st.cs || 0) ? 'gcard2 on' : 'gcard2'; }
+    v.gtrack = 'translateX(calc(50% - 450px - ' + (st.cs || 0) + ' * 924px))';
+    const tr = st.tour || 0;
+    for (let i = 0; i < 4; i++) {
+      v['sg' + i] = i === tr ? 'sgb on' : 'sgb'; v['fl' + i] = i === tr ? 'fl on' : 'fl';
+      const k = (i - tr + 4) % 4;
+      v['sk' + i] = 'translate(' + (k * 26) + 'px, ' + (-k * 26) + 'px) scale(' + (1 - k * 0.06) + ')';
+      v['so' + i] = k === 0 ? 1 : (k === 3 ? 0 : 0.5 - k * 0.12); v['sz' + i] = 10 - k;
+    }
+    const open = st.open || { 0: true };
+    for (let i = 0; i < 8; i++) {
+      v['fl2_' + i] = open[i] ? 'fq on' : 'fq'; v['fd2_' + i] = open[i] ? 'fqd on' : 'fqd';
+      v['ft' + i] = () => { const o = Object.assign({}, (this.state && this.state.open) || { 0: true }); o[i] = !o[i]; this.setState({ open: o }); };
+    }
+    for (let i = 0; i < 4; i++) { v['ut' + i] = i === tr ? 'utab on' : 'utab'; v['sc' + i] = i === tr ? 'scard on' : 'scard'; }
+    v.strack = 'translateX(calc(50% - 460px - ' + tr + ' * 952px))';
+    const rq = st.rq || 0;
+    for (let i = 0; i < 4; i++) { v['rq' + i] = i === rq; v['rd' + i] = i === rq ? 'rdot on' : 'rdot'; v['rsel' + i] = () => this.setState({ rq: i }); }
+    return v;
+  }
+}
+
+boot(Component);
+</script>
+</body>
+</html>
