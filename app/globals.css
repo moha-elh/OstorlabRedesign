@@ -26,7 +26,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-
   color: var(--white);
   font-size: var(--fs-card);
   font-weight: 600;
-  transition: opacity 160ms var(--ease-out), border-color 160ms var(--ease-out);
+  transition: transform var(--t-hover) var(--ease-out), background-color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out);
 }
-.btn:hover { opacity: .9; }
+.btn:hover { border-color: rgba(255, 255, 255, .6); background-color: rgba(255, 255, 255, .06); transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(.98); transition-duration: 80ms; }
 .btn-light { border: 0; padding: var(--btn-pad-light, 13px 22px); background: var(--white); color: var(--ink-hero); }
+.btn-light:hover { background-color: var(--paper); }
+
+/* The arrow after text links nudges forward on hover. */
+.arrow { flex: none; transition: transform var(--t-hover) var(--ease-out); }
+a:hover > .arrow, a:focus-visible > .arrow { transform: translateX(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover, .btn:active, a:hover > .arrow, a:focus-visible > .arrow { transform: none; }
+}

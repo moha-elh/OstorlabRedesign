@@ -91,6 +91,8 @@
   font-weight: 600;
   cursor: pointer;
 }
+.tab { transition: background-color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out), color var(--t-hover) var(--ease-out); }
+.tab:hover { border-color: var(--tile-line-hover); background: var(--white); }
 .tab[aria-selected="true"] { border-color: var(--navy); background: var(--navy); color: var(--white); }
 
 .mail {

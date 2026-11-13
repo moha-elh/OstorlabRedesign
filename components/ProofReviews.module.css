@@ -119,9 +119,10 @@
   background: rgba(255, 255, 255, .08);
   color: var(--white);
   cursor: pointer;
-  transition: background-color var(--t-hover) var(--ease-out);
+  transition: background-color var(--t-hover) var(--ease-out), scale 80ms var(--ease-out);
 }
 .nav:hover { background: rgba(255, 255, 255, .16); }
+.nav:active { scale: .94; }
 .nav svg { display: block; }
 
 .dots { display: flex; gap: 8px; }

@@ -61,7 +61,7 @@
 .col { display: flex; flex-direction: column; gap: 10px; font-size: var(--fs-label); }
 .col strong { margin-bottom: 4px; font-weight: 600; }
 .col ul { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
-.col a { color: var(--text-dark-2); }
+.col a { color: var(--text-dark-2); transition: color var(--t-hover) var(--ease-out); }
 .col a:hover { color: var(--white); }
 
 .bottom {
@@ -76,6 +76,8 @@
   color: var(--text-dark-3);
 }
 .legal { display: flex; gap: 20px; }
+.legal a { transition: color var(--t-hover) var(--ease-out); }
+.legal a:hover { color: var(--white); }
 
 /* The wordmark is cut off by the bottom of the page. */
 .wordmark { position: relative; height: 170px; margin: 44px -48px 0; overflow: hidden; }

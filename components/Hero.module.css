@@ -18,7 +18,8 @@
   padding: 26px 40px 0;
   font-size: var(--fs-label);
 }
-.nav a { color: var(--text-hero-2); }
+.nav a { color: var(--text-hero-2); transition: color var(--t-hover) var(--ease-out), background-color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out); }
+.nav a:hover { color: var(--white); }
 .nav a[aria-current="page"] { color: var(--white); }
 .navLeft { display: flex; gap: 28px; }
 .navRight { display: flex; gap: 24px; align-items: center; justify-content: flex-end; }
@@ -31,6 +32,7 @@
   font-weight: 600;
   color: var(--white);
 }
+.nav .demo:hover { border-color: rgba(255, 255, 255, .6); background-color: rgba(255, 255, 255, .06); }
 
 .body {
   position: relative;
@@ -65,7 +67,7 @@
   color: var(--text-hero-2);
 }
 .ctas { --btn-pad: 12px 22px; --btn-pad-light: 13px 22px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 6px; }
-.ctas :global(.btn:not(.btn-light)) { border-color: rgba(255, 255, 255, .25); }
+.ctas :global(.btn:not(.btn-light):not(:hover)) { border-color: rgba(255, 255, 255, .25); }
 
 
 .stats {
