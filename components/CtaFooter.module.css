@@ -3,7 +3,7 @@
   position: relative;
   min-height: 800px; /* 40px section padding + 60px + the reference's 700px CTA block */
   padding: 100px 48px 0;
-  background: var(--navy);
+  background: var(--ink-hero);
   color: var(--white);
   text-align: center;
 }
@@ -46,7 +46,7 @@
   transition: opacity 160ms var(--ease-out), border-color 160ms var(--ease-out);
 }
 .btn:hover { opacity: .9; }
-.btnLight { padding: 14px 24px; border: 0; background: var(--white); color: var(--navy); }
+.btnLight { padding: 14px 24px; border: 0; background: var(--white); color: var(--ink-hero); }
 
 /* Footer */
 .footer {
