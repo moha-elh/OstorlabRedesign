@@ -53,8 +53,6 @@ function Reviews() {
         <span><span className={s.stars} aria-hidden="true">★★★★★</span><strong>4.8/5</strong> on Gartner Peer Insights</span>
       </div>
       <div className={s.revRow}>
-        {/* Art behind the cards so the glass has something to blur. */}
-        <Image className={s.revArt} src="/assets/art/wave.png" alt="" width={1600} height={560} sizes="100vw" />
         <div className={s.marquee}>
           {[0, 1].map((copy) =>
             reviews.map((r) => (
