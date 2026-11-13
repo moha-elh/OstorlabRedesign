@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, type CSSProperties } from "react";
+import { useAutoAdvance } from "./useAutoAdvance";
 import { useTabKeys } from "./useTabKeys";
 import s from "./PlatformTour.module.css";
 
@@ -29,15 +30,14 @@ const views = [
 ];
 
 export default function PlatformTour() {
-  const [active, setActive] = useState(0);
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
+  const [active, setActive] = useAutoAdvance(views.length, hover || focus);
   const keys = useTabKeys(views.length, active, setActive);
-  const next = () => setActive((i) => (i + 1) % views.length);
 
   return (
     <section
-      className={`${s.section} ${hover || focus ? s.paused : ""}`}
+      className={s.section}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onFocus={() => setFocus(true)}
@@ -61,10 +61,6 @@ export default function PlatformTour() {
               onClick={() => setActive(i)}
             >
               {v.tab}
-              {/* The progress line drives auto-advance: when its 6s fill ends, the next view shows. */}
-              <span className={s.progress} aria-hidden="true">
-                {i === active && <i onAnimationEnd={next} />}
-              </span>
             </button>
           ))}
         </div>
