@@ -6,6 +6,7 @@ import ProofReviews from "@/components/ProofReviews";
 import PlatformTour from "@/components/PlatformTour";
 import Integrations from "@/components/Integrations";
 import Faq from "@/components/Faq";
+import CtaFooter from "@/components/CtaFooter";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <PlatformTour />
       <Integrations />
       <Faq />
+      <CtaFooter />
     </main>
   );
 }
