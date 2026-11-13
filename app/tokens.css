@@ -3,6 +3,7 @@
   --navy: #03203D;
   --navy-2: #0B2D4C;
   --blue: #0081BA;
+  --blue-text: #006D9E;  /* blue for text links on light backgrounds (AA on white, paper and the sky) */
   --cyan: #67C9EE;
   --paper: #F4F6F8;
   --ink-hero: #0A0C10;
@@ -14,8 +15,8 @@
   --text-hero-2: #A9B4C0;
   --text-hero-3: #7D8A97;
   --text-light-2: #4D6578;
-  --text-light-3: #7D8A97;
-  --head-light-muted: #9FB0C0;
+  --text-light-3: #6B7681;
+  --head-light-muted: #7D8B97;
 
   --line-light: #E6EBF0;
   --line-light-2: #E3E9EF;
@@ -86,7 +87,7 @@
 
 /* Integrations */
 :root {
-  --tile-name: #9AA7B4;
+  --tile-name: #6D767F;
   --tile-line-hover: #C9D6E2;
 }
 

@@ -103,7 +103,7 @@
   margin-top: 10px;
   font-size: var(--fs-card);
   font-weight: 600;
-  color: var(--blue);
+  color: var(--blue-text);
 }
 
 @media (max-width: 900px) {

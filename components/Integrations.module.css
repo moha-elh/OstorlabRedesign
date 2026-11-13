@@ -78,7 +78,7 @@
   gap: 8px;
   font-size: var(--fs-card);
   font-weight: 600;
-  color: var(--blue);
+  color: var(--blue-text);
 }
 
 @media (prefers-reduced-motion: reduce) {
