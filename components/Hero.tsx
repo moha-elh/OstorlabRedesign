@@ -10,6 +10,8 @@ const stats = [
 export default function Hero() {
   return (
     <section className={s.hero}>
+      <Image className={s.horizon} src="/assets/art/horizon.png" alt="" width={1600} height={640} sizes="100vw" priority />
+
       <nav className={s.nav} aria-label="Main">
         <div className={s.navLeft}>
           <a href="#" aria-current="page">Home</a>

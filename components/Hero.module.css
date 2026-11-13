@@ -109,3 +109,20 @@
 @media (max-width: 900px) {
   .navLeft, .hideSm { display: none; }
 }
+
+.horizon {
+  position: absolute;
+  left: 0;
+  bottom: -75px;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  animation: rise 1.6s var(--ease-out) both;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .horizon { animation: none; }
+}
