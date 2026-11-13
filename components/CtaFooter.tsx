@@ -24,7 +24,7 @@ export default function CtaFooter() {
       <footer className={s.footer}>
         <div className={s.inner}>
           <div className={s.brand}>
-            <Image src="/assets/brand/ostorlab-logo-white.png" alt="Ostorlab" width={600} height={140} />
+            <Image src="/assets/brand/ostorlab-logo-white.png" alt="Ostorlab" width={3112} height={622} />
             <p>Continuous scanning and agentic pentesting for your mobile app and everything behind it.</p>
           </div>
           {columns.map(([title, links]) => (
@@ -46,7 +46,7 @@ export default function CtaFooter() {
           </div>
         </div>
         <div className={s.wordmark} aria-hidden="true">
-          <Image src="/assets/brand/ostorlab-logo-white.png" alt="" width={600} height={140} sizes="100vw" />
+          <Image src="/assets/brand/ostorlab-logo-white.png" alt="" width={3112} height={622} sizes="100vw" />
         </div>
       </footer>
     </>

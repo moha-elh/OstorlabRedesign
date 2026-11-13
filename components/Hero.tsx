@@ -19,7 +19,7 @@ export default function Hero() {
           <a href="#">Solutions</a>
         </div>
         <a className={s.logo} href="#" aria-label="Ostorlab home">
-          <Image src="/assets/brand/ostorlab-logo-white.png" alt="Ostorlab" width={600} height={140} priority />
+          <Image src="/assets/brand/ostorlab-logo-white.png" alt="Ostorlab" width={3112} height={622} priority />
         </a>
         <div className={s.navRight}>
           <a className={s.hideSm} href="#">Pricing</a>
