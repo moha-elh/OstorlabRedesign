@@ -26,41 +26,40 @@
 }
 .marquee {
   display: flex;
-  gap: 14px;
   width: max-content;
   margin: 0;
   padding: 0;
   list-style: none;
-  animation: drift 46s linear infinite;
+  animation: drift 92s linear infinite; /* 46s per list length, as in the design; the track moves two lists per loop */
 }
 .reverse { animation-direction: reverse; }
 .row:hover .marquee { animation-play-state: paused; }
 @keyframes drift { to { transform: translateX(-50%); } }
 
+/* Spacing is margin, not flex gap, so -50% is exactly two copies of the list. */
 .tile {
   flex: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 12px;
   box-sizing: content-box;
   height: 84px;
-  padding: 0 30px;
+  margin-right: 14px;
+  padding: 0 28px;
   border: 1px solid var(--line-light);
   border-radius: var(--r-item);
   background: var(--white);
+  white-space: nowrap;
   transition: border-color var(--t-hover) var(--ease-out), box-shadow var(--t-hover) var(--ease-out);
 }
 .tile img {
-  width: auto;
-  height: auto;
-  max-width: 140px;
-  max-height: 30px;
+  width: 32px;
+  height: 28px;
+  object-fit: contain;
   filter: grayscale(1) contrast(.9);
   opacity: .5;
   transition: filter var(--t-hover) var(--ease-out), opacity var(--t-hover) var(--ease-out);
 }
-.tile img.iconLogo { max-height: 26px; }
 .tile span {
   font-size: 19px;
   font-weight: 600;

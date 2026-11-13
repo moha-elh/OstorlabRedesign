@@ -2,27 +2,31 @@ import Image from "next/image";
 import Arrow from "./Arrow";
 import s from "./Integrations.module.css";
 
-type Tool = { name: string; file: string; w: number; icon?: boolean };
-
-/* Wordmarks show alone; icon-only logos get their name next to them. All files are 96px high. */
-const rows: Tool[][] = [
+/* Brand icons from the CC0 svg-logos set; ServiceNow's mark is cropped from its wordmark. Every tile is icon + name. */
+const rows = [
   [
-    { name: "Jira", file: "jira", w: 280 },
-    { name: "GitHub", file: "github", w: 346 },
-    { name: "Slack", file: "slack", w: 378, icon: true },
-    { name: "Linear", file: "linear", w: 96, icon: true },
-    { name: "GitLab", file: "gitlab", w: 296 },
-    { name: "Bitrise", file: "bitrise", w: 334 },
+    { name: "Jira", file: "jira.svg" },
+    { name: "GitHub", file: "github.svg" },
+    { name: "Slack", file: "slack.svg" },
+    { name: "Linear", file: "linear.svg" },
+    { name: "GitLab", file: "gitlab.svg" },
+    { name: "Bitrise", file: "bitrise.svg" },
   ],
   [
-    { name: "Jenkins", file: "jenkins", w: 328 },
-    { name: "CircleCI", file: "circleci", w: 410 },
-    { name: "ServiceNow", file: "servicenow", w: 564 },
-    { name: "Bitbucket", file: "bitbucket", w: 96, icon: true },
-    { name: "AWS", file: "aws", w: 96 },
-    { name: "Google Cloud", file: "google-cloud", w: 96, icon: true },
+    { name: "Jenkins", file: "jenkins.svg" },
+    { name: "CircleCI", file: "circleci.svg" },
+    { name: "ServiceNow", file: "servicenow.png" },
+    { name: "Bitbucket", file: "bitbucket.svg" },
+    { name: "AWS", file: "aws.svg" },
+    { name: "Google Cloud", file: "google-cloud.svg" },
   ],
 ];
+
+/*
+ * The track holds the list 4 times and slides by -50% (2 copies), so it always covers the row,
+ * even on wide screens, and the loop lands exactly on the seam. Copies after the first are hidden from assistive tech.
+ */
+const COPIES = [0, 1, 2, 3];
 
 export default function Integrations() {
   return (
@@ -35,19 +39,12 @@ export default function Integrations() {
       <div className={s.rows}>
         {rows.map((row, r) => (
           <div key={r} className={s.row}>
-            {/* Each list is rendered twice for a seamless loop; the copy is hidden from assistive tech. */}
             <ul className={`${s.marquee} ${r === 1 ? s.reverse : ""}`}>
-              {[0, 1].map((copy) =>
+              {COPIES.map((copy) =>
                 row.map((t) => (
-                  <li key={`${copy}-${t.file}`} className={s.tile} aria-hidden={copy === 1}>
-                    <Image
-                      className={t.icon ? s.iconLogo : undefined}
-                      src={`/assets/integrations/${t.file}.png`}
-                      alt={t.icon ? "" : t.name}
-                      width={t.w}
-                      height={96}
-                    />
-                    {t.icon && <span>{t.name}</span>}
+                  <li key={`${copy}-${t.file}`} className={s.tile} aria-hidden={copy > 0}>
+                    <Image src={`/assets/integrations/${t.file}`} alt="" width={28} height={28} />
+                    <span>{t.name}</span>
                   </li>
                 ))
               )}
