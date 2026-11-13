@@ -71,11 +71,26 @@
 .item button:hover .toggle { scale: 1.08; }
 .item button:active .toggle { scale: .94; }
 .item.on .toggle { transform: rotate(45deg); background: var(--blue); color: var(--white); }
+/*
+ * Open/close animates the row from 0fr to 1fr. Closed answers are visibility: hidden, so they leave the
+ * accessibility tree and tab order; visibility flips at the end of the close, so the text stays during it.
+ */
 .answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows var(--t-toggle) var(--ease-out), visibility var(--t-toggle);
+}
+.item.on .answer { grid-template-rows: 1fr; visibility: visible; }
+.answerClip { min-height: 0; overflow: hidden; }
+.answer p {
   padding: 0 70px 22px 60px;
   font-size: var(--fs-card);
   line-height: var(--lh-card);
   color: var(--text-dark-2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .answer { transition: none; }
 }
 
 .still {
@@ -90,5 +105,5 @@
 @media (max-width: 900px) {
   .section { padding: 210px 16px 80px; }
   .grid { grid-template-columns: 1fr; gap: 10px; }
-  .answer { padding: 0 20px 22px 60px; }
+  .answer p { padding: 0 20px 22px 60px; }
 }

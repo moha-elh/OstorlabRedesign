@@ -31,7 +31,11 @@ export default function Faq() {
             </svg>
           </span>
         </button>
-        <div id={`faq-${i}`} className={s.answer} hidden={!open[i]}>{a}</div>
+        <div id={`faq-${i}`} className={s.answer}>
+          <div className={s.answerClip}>
+            <p>{a}</p>
+          </div>
+        </div>
       </div>
     );
   };
