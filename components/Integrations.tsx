@@ -32,7 +32,7 @@ export default function Integrations() {
   return (
     <section className={s.section}>
       <div className={s.head}>
-        <h2 className="h2"><span className={s.muted}>Findings land where</span><br />your team already works.</h2>
+        <h2 className="h2 h2-sky"><span>Findings land where</span><br />your team already works.</h2>
         <p>Run scans from CI/CD, push findings to Jira, Linear or ServiceNow, and get told in Slack.</p>
       </div>
 

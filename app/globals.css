@@ -13,3 +13,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-
   letter-spacing: var(--ls-hero);
   text-align: center;
 }
+
+/* A heading placed on the blue band of a sky join (same shadow as "Scan your app for free"). */
+.h2-sky { color: var(--white); text-shadow: 0 2px 40px rgba(0, 30, 80, .35); }
+.h2-sky > span { color: var(--head-sky-muted); }
