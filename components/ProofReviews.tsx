@@ -6,7 +6,10 @@ import Arrow from "./Arrow";
 import { useAutoAdvance } from "./useAutoAdvance";
 import s from "./ProofReviews.module.css";
 
-/* Customer stories from ostorlab.co/partners (copy, metrics and images from the live case studies). */
+/*
+ * Customer stories from ostorlab.co/partners. Bumble and RSA covers are the site's own (/v2/case-studies/*-cover.png).
+ * QMC has no cover on the site; qmc.png is composed in the same style from QMC's logo and its case-study screenshot.
+ */
 const cases = [
   {
     company: "Bumble Inc.",
@@ -22,7 +25,7 @@ const cases = [
     title: "Embedding Security into the Mobile Development Lifecycle with Ostorlab",
     text: "RSA Security runs Ostorlab SAST and DAST on each iOS and Android release as part of its formal security sign-off.",
     href: "https://www.ostorlab.co/case-studies/rsa-security",
-    img: { src: "/assets/case-studies/rsa.png", w: 1744, h: 638, position: "80% 50%" },
+    img: { src: "/assets/case-studies/rsa.png", w: 1280, h: 720, position: "50% 50%" },
   },
   {
     company: "Qatar Media Corporation",
@@ -30,7 +33,7 @@ const cases = [
     title: "How QMC Cut Remediation Time from 4 Months to 1 Week with Agentic Security Testing",
     text: "QMC brought the average remediation cycle down from four months to one week, about 17× faster.",
     href: "https://www.ostorlab.co/case-studies/qmc",
-    img: { src: "/assets/case-studies/qmc.png", w: 2558, h: 1274, position: "0% 0%" },
+    img: { src: "/assets/case-studies/qmc.png", w: 1280, h: 720, position: "50% 50%" },
   },
 ];
 
