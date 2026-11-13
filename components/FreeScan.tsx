@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState, type KeyboardEvent } from "react";
+import { useState } from "react";
+import { useTabKeys } from "./useTabKeys";
 import s from "./FreeScan.module.css";
 
 const customers = [
@@ -36,17 +37,8 @@ const kinds = [
 
 export default function FreeScan() {
   const [active, setActive] = useState(0);
-  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const keys = useTabKeys(kinds.length, active, setActive);
   const cur = kinds[active];
-
-  function onKey(e: KeyboardEvent) {
-    const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-    if (!step) return;
-    e.preventDefault();
-    const next = (active + step + kinds.length) % kinds.length;
-    setActive(next);
-    tabs.current[next]?.focus();
-  }
 
   return (
     <section id="scan" className={s.section}>
@@ -71,11 +63,11 @@ export default function FreeScan() {
         <label htmlFor="scan-target" className={s.srOnly}>{cur.aria}</label>
         <input id="scan-target" className={s.input} type="text" placeholder={cur.placeholder} />
         <div className={s.bar}>
-          <div className={s.tabs} role="tablist" aria-label="What to scan" onKeyDown={onKey}>
+          <div className={s.tabs} role="tablist" aria-label="What to scan" onKeyDown={keys.onKeyDown}>
             {kinds.map((k, i) => (
               <button
                 key={k.label}
-                ref={(el) => { tabs.current[i] = el; }}
+                ref={keys.ref(i)}
                 type="button"
                 role="tab"
                 aria-selected={i === active}
